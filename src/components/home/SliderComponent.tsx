@@ -7,7 +7,7 @@ import { BlogCard } from './BlogCard'
 
 export function SliderComponent() {
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full bg-inherit">
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
