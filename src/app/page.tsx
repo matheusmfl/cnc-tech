@@ -1,3 +1,4 @@
+import { SliderComponent } from '@/components/home/SliderComponent'
 import { Header } from '@/components/home/header/Header'
 import { HeroSection } from '@/components/home/heroSection/HeroSection'
 import { Section1 } from '@/components/home/section1/Section1'
@@ -16,7 +17,6 @@ export default function Home() {
       <Section3 />
       <Section4 />
       <Section5 />
-      <h1>Home</h1>
     </div>
   )
 }

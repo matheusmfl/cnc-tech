@@ -20,7 +20,7 @@ export function BlogCard() {
         <div className="w-full pt-7 flex justify-end">
           <a
             href="/"
-            className=" text-right w-full text-slate-800 font-bold text-lg hover:underline"
+            className=" text-right w-full text-slate-800  font-bold text-lg hover:underline"
           >
             Leia mais
           </a>
