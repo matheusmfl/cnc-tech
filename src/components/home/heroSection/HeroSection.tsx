@@ -3,7 +3,7 @@ import heroImg from '../../../assets/hero-image.png'
 
 export function HeroSection() {
   return (
-    <section className="gratiantHero pt-[30px] px-5 pb-[10px] flex flex-col gap-5">
+    <section className="gratiantHero pt-[30px] px-5 pb-[10px] flex flex-col gap-5 text-slate-50">
       <h2 className="title">
         <strong>Importadora</strong> especializada em máquinas{' '}
         <strong>industriais</strong>
