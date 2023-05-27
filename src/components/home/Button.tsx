@@ -12,7 +12,7 @@ export function Button({ children }: { children: ReactNode }) {
 
 export function NextButton() {
   return (
-    <button className="flex items-center justify-center py-3 px-6 text-white border rounded-full border-white">
+    <button className="flex items-center text-inherit justify-center py-3 px-6 text-white border rounded-full border-inherit">
       <ChevronsRight />
     </button>
   )

@@ -23,7 +23,7 @@ h1,h2,h3,p,span {
   font-weight: 400;
   font-size: 28px;
   line-height: 36px;
-  color: #F8FAFC;
+
 }
 
 .subtitle {
@@ -34,7 +34,7 @@ h1,h2,h3,p,span {
   line-height: 24px;
 
 
-  color: #F8FAFC;
+
 }
 
 .btn-primary {
