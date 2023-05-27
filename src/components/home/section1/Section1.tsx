@@ -7,7 +7,7 @@ export function Section1() {
         Fale com nossos representantes e veja as melhores soluções pro seu
         negócio.
       </span>
-      <div className="w-[174px] h-14">
+      <div className="h-14">
         <Button>
           <strong>Falar conosco</strong>{' '}
         </Button>
