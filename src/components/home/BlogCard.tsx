@@ -3,7 +3,7 @@ import imgGeneric from '../../assets/genericImg.svg'
 
 export function BlogCard() {
   return (
-    <div className="rounded-3xl overflow-hidden flex flex-col shadow-xl">
+    <div className="rounded-3xl overflow-hidden flex flex-col">
       <div className="aspect-square h-60 flex items-center justify-center bg-white">
         <Image src={imgGeneric} alt="Generic Image" />
       </div>
