@@ -14,7 +14,7 @@ export function Section4() {
           Conheça nossos cursos para equipes de alto desempenho
         </span>
       </div>
-      <div className="flex justify-end w-full border-white">
+      <div className="flex justify-end w-full border-black text-black">
         <NextButton />
       </div>
     </section>
