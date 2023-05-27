@@ -34,3 +34,18 @@ h1,h2,h3,p,span {
 
   color: #F8FAFC;
 }
+
+.btn-primary {
+  display: flex;
+  background: #075985;
+  border-radius: 4px;
+  color: white;
+  padding-top: 16px;
+  padding-bottom:  16px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
