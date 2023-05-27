@@ -56,6 +56,9 @@ export function CollapsibleComponent() {
       </header>
       <Collapsible.Content>
         <MenuItem title="Produtos" icon="package" />
+        <MenuItem title="Serviços" icon="settings" />
+        <MenuItem title="Contato" icon="contact" />
+        <MenuItem title="Sobre" icon="info" />
       </Collapsible.Content>
     </Collapsible.Root>
   )
