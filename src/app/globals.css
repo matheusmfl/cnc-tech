@@ -2,3 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -text-rendering: optimizeLegibility;
+}
+
+.gratiantHero {
+background: linear-gradient(180deg, #053B59 0%, #04080B 100%);
+}
+
+h1,h2,h3,p,span {
+  @apply font-sans
+}
+
+.title {
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+  color: #F8FAFC;
+}
+
+.subtitle {
+ 
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+
+  color: #F8FAFC;
+}
