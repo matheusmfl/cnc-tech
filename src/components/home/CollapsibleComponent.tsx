@@ -11,17 +11,19 @@ import iconMore from '../../assets/iconMore.svg'
 
 function MenuItem() {
   return (
-    <div className="border-b border-solid border-slate-400 flex px-5 items-center justify-between bg-slate-100">
-      <div>
+    <div className="border-b border-solid border-slate-400 flex py-4 px-5 items-center justify-between bg-slate-100">
+      <div className="flex gap-[22px]">
         <Package />
         <span>Produtos</span>
       </div>
-      <Image
-        src={iconMore}
-        alt="Icone que desce o menu"
-        width={24}
-        height={24}
-      />
+      <button>
+        <Image
+          src={iconMore}
+          alt="Icone que desce o menu"
+          width={24}
+          height={24}
+        />
+      </button>
     </div>
   )
 }
@@ -30,14 +32,16 @@ export function CollapsibleComponent() {
   const [open, setOpen] = useState(false)
   return (
     <Collapsible.Root open={open} onOpenChange={setOpen}>
-      <header className="bg-slate-100 flex justify-between p-5 items-center">
+      <header className="bg-slate-100 flex justify-between p-5 items-center border-b border-solid border-slate-400">
         <Search size={20} />
         <Image src={logo} alt="Logo" />
         <Collapsible.Trigger asChild>
-          <button>{open ? <Menu size={20} /> : <X size={20} />}</button>
+          <button>{open ? <X size={20} /> : <Menu size={20} />}</button>
         </Collapsible.Trigger>
       </header>
-      <Collapsible.Content />
+      <Collapsible.Content>
+        <MenuItem />
+      </Collapsible.Content>
     </Collapsible.Root>
   )
 }
