@@ -1,4 +1,3 @@
-import { SliderComponent } from '@/components/home/SliderComponent'
 import { Header } from '@/components/home/header/Header'
 import { HeroSection } from '@/components/home/heroSection/HeroSection'
 import { Section1 } from '@/components/home/section1/Section1'
