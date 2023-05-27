@@ -2,7 +2,7 @@ import { NextButton } from '../Button'
 
 export function Section4() {
   return (
-    <section className="p-10 flex flex-col bg-slate-100 gap-7">
+    <section className="p-10 flex flex-col bg-slate-100 gap-7 border-white">
       <div className="flex flex-col gap-3">
         <h2 className="title leading-7 text-black">
           <strong>
