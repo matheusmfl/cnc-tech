@@ -6,6 +6,7 @@ import { Section3 } from '@/components/home/section3/Section3'
 import { Section4 } from '@/components/home/section4/Section4'
 import { Section5 } from '@/components/home/section5/Section5'
 import { Section6 } from '@/components/home/section6/Section6'
+import { Section7 } from '@/components/home/section7/Section7'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Section4 />
       <Section5 />
       <Section6 />
+      <Section7 />
     </div>
   )
 }
