@@ -5,9 +5,9 @@ export function FeedbackCard() {
   return (
     <div
       className="flex flex-col rounded-lg bg-sky-900 text-white
-     items-center justify-center px-10 text-center"
+     items-center justify-center px-10 text-center "
     >
-      <div className="-translate-y-14">
+      <div className="-translate-y-14 ">
         <Image src={avatar} alt="Avatar" />
       </div>
 

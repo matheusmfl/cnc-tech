@@ -4,11 +4,11 @@ import { SliderComponent } from '../SliderComponent'
 
 export function SectionFeedbacks() {
   return (
-    <section className="flex flex-col px-5 py-10 gap-10 bg-slate-100">
+    <section className="flex flex-col px-5 py-10 gap-20 bg-slate-100">
       {/* Nome da Sessão */}
       <SectionNameComponent>
         <h2 className="title text-black">
-          Cultura do <strong>crescimento</strong>
+          Depoimento de nossos <strong>clientes</strong>
         </h2>
       </SectionNameComponent>
 

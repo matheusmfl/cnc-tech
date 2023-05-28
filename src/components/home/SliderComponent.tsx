@@ -18,6 +18,7 @@ export function SliderComponent({ element }: { element: ReactNode[] }) {
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
         modules={[Pagination]}
+        style={{ overflow: 'visible' }}
       >
         {element.map((item, index) => {
           return (
