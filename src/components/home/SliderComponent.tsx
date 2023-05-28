@@ -4,9 +4,10 @@ import { Pagination } from 'swiper'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { BlogCard } from './BlogCard'
 
-export function SliderComponent() {
+import { ReactNode } from 'react'
+
+export function SliderComponent({ element }: { element: ReactNode[] }) {
   return (
     <div className=" bg-slate-200 rounded-3xl shadow-xl">
       <Swiper
@@ -18,18 +19,13 @@ export function SliderComponent() {
         onSwiper={(swiper) => console.log(swiper)}
         modules={[Pagination]}
       >
-        <SwiperSlide>
-          <BlogCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <BlogCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <BlogCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <BlogCard />
-        </SwiperSlide>
+        {element.map((item, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <>{item}</>
+            </SwiperSlide>
+          )
+        })}
       </Swiper>
       <div className="swiper-pagination"></div>
     </div>

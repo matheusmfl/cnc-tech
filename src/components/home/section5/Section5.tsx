@@ -1,5 +1,6 @@
 import { SectionNameComponent } from '../SectionNameComponent'
 import { SliderComponent } from '../SliderComponent'
+import { BlogCard } from '../BlogCard'
 
 export function Section5() {
   return (
@@ -10,7 +11,7 @@ export function Section5() {
         </h2>
       </SectionNameComponent>
 
-      <SliderComponent />
+      <SliderComponent element={[<BlogCard key={1} />, <BlogCard key={2} />]} />
     </section>
   )
 }

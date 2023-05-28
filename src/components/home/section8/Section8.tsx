@@ -1,4 +1,3 @@
-import { FeedbackCard } from '../FeedbackCard'
 import { SectionNameComponent } from '../SectionNameComponent'
 
 export function Section8() {
@@ -17,8 +16,6 @@ export function Section8() {
         presta cursos técnicos e treinamentos com o objetivo de formar
         profissionais capacitados para o mercado de trabalho.
       </span>
-
-      <FeedbackCard />
     </section>
   )
 }
