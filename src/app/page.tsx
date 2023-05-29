@@ -1,3 +1,4 @@
+import { Footer } from '@/components/home/footer/Footer'
 import { Header } from '@/components/home/header/Header'
 import { HeroSection } from '@/components/home/heroSection/HeroSection'
 import { Section1 } from '@/components/home/section1/Section1'
@@ -30,6 +31,7 @@ export default function Home() {
       <Section9 />
       <Section10 />
       <Section11 />
+      <Footer />
     </div>
   )
 }
