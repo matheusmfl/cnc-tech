@@ -8,6 +8,7 @@ import { Section5 } from '@/components/home/section5/Section5'
 import { Section6 } from '@/components/home/section6/Section6'
 import { Section7 } from '@/components/home/section7/Section7'
 import { Section8 } from '@/components/home/section8/Section8'
+import { Section9 } from '@/components/home/section9/Section9'
 import { SectionFeedbacks } from '@/components/home/sectionFeedbacks/sectionFeedbacks'
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <Section7 />
       <Section8 />
       <SectionFeedbacks />
+      <Section9 />
     </div>
   )
 }
