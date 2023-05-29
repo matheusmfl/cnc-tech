@@ -21,10 +21,9 @@ export function Section9() {
           date="22/03/2023"
         />
         <BlogCardWithDate
-          title="Soluções avançadas de usinagens e furação,
-         desde uma máquina individual até a interligação em células de produção"
-          category="Produção em Rede"
-          date="22/03/2023"
+          title="Foco em flexibilidade e eficiência de custos:"
+          category="Eventos"
+          date="03/05/2023"
         />
         <BlogCardWithDate
           title="Soluções avançadas de usinagens e furação,
@@ -47,7 +46,7 @@ export function Section9() {
           CNCTech.
         </span>
         {/* div com botão usado para posicionar no final do conteúdo */}
-        <div className="flex justify-end">
+        <div className="flex justify-end border-slate-900 text-slate-900">
           <ArrowButton> Ver mais </ArrowButton>
         </div>
       </div>

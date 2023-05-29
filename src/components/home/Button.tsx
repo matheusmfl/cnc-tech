@@ -20,7 +20,7 @@ export function NextButton() {
 
 export function ArrowButton({ children }: { children: ReactNode }) {
   return (
-    <button className="flex gap-4 border border-solid border-slate-900 rounded-[40px] text-slate-900 py-[10px] px-6">
+    <button className="flex gap-4 border border-solid border-inherit rounded-[40px] text-inherit py-[10px] px-6">
       {children} <ArrowRight />
     </button>
   )
