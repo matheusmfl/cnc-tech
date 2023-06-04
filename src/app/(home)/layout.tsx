@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
-import './globals.css'
+import '../globals.css'
 import { Roboto } from 'next/font/google'
+import { Header } from '@/components/home/header/Header'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -15,7 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <Header />
+      <main className="py-8 px-5">
+        <body className={roboto.className}>{children}</body>
+      </main>
     </html>
   )
 }

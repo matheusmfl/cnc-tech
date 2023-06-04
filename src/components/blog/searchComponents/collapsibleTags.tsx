@@ -1,23 +1,27 @@
-/* eslint-disable no-unused-vars */
 'use client'
+import { MenuItem } from '@/components/home/header/MenuItem'
 import * as Collapsible from '@radix-ui/react-collapsible'
-import logo from '../../../assets/logo.svg'
-import { Search, Menu, X } from 'lucide-react'
-import Image from 'next/image'
-import { useState } from 'react'
-import { MenuItem } from './MenuItem'
 
-export function CollapsibleComponent() {
+import { ChevronDown, ChevronUp } from 'lucide-react'
+
+import { useState } from 'react'
+
+export function CollapsibleTags() {
+  /* eslint-disable no-unused-vars */
+
   const [open, setOpen] = useState(false)
   return (
     <Collapsible.Root open={open} onOpenChange={setOpen}>
-      <header className="bg-slate-100 w-full color-gray-700 leading-5 flex justify-between p-5 items-center border-b border-solid border-slate-400">
-        <Search size={20} />
-        <Image src={logo} alt="Logo" />
+      <div className="border-b border-[#CBD5E1] flex justify-between px-2 py-3 transition">
+        <span className="text-slate-900 text-base leading-5 font-medium">
+          Categorias
+        </span>
         <Collapsible.Trigger asChild>
-          <button>{open ? <X size={20} /> : <Menu size={20} />}</button>
+          <button>
+            {open ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+          </button>
         </Collapsible.Trigger>
-      </header>
+      </div>
       <Collapsible.Content className="CollapsibleContent">
         <MenuItem title="Produtos" icon="package" />
         <MenuItem title="Serviços" icon="settings" />

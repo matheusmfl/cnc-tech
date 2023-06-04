@@ -1,5 +1,5 @@
 import { Footer } from '@/components/home/footer/Footer'
-import { Header } from '@/components/home/header/Header'
+
 import { HeroSection } from '@/components/home/heroSection/HeroSection'
 import { Section1 } from '@/components/home/section1/Section1'
 import { Section10 } from '@/components/home/section10/Section10'
@@ -17,7 +17,6 @@ import { SectionFeedbacks } from '@/components/home/sectionFeedbacks/sectionFeed
 export default function Home() {
   return (
     <div className=" bg-blue-900">
-      <Header />
       <HeroSection />
       <Section1 />
       <Section2 />
