@@ -1,5 +1,6 @@
 'use client'
-import { MenuItem } from '@/components/home/header/MenuItem'
+/* eslint-disable prettier/prettier */
+
 import * as Collapsible from '@radix-ui/react-collapsible'
 
 import { ChevronDown, ChevronUp } from 'lucide-react'
@@ -11,8 +12,11 @@ export function CollapsibleTags() {
 
   const [open, setOpen] = useState(false)
   return (
-    <Collapsible.Root open={open} onOpenChange={setOpen}>
-      <div className="border-b border-[#CBD5E1] flex justify-between px-2 py-3 transition">
+    <Collapsible.Root open={open} onOpenChange={setOpen} className='rounded-[4px]'>
+      <div
+        className={`border-b border-[#CBD5E1] ${open ? 'bg-slate-100 rounded-[4px]' : 'bg-inherit'
+          } flex justify-between px-2 py-3 transition`}
+      >
         <span className="text-slate-900 text-base leading-5 font-medium">
           Categorias
         </span>
@@ -23,10 +27,9 @@ export function CollapsibleTags() {
         </Collapsible.Trigger>
       </div>
       <Collapsible.Content className="CollapsibleContent">
-        <MenuItem title="Produtos" icon="package" />
-        <MenuItem title="Serviços" icon="settings" />
-        <MenuItem title="Contato" icon="contact" />
-        <MenuItem title="Sobre" icon="info" />
+        <div>
+          Teste de conhecimento
+        </div>
       </Collapsible.Content>
     </Collapsible.Root>
   )
