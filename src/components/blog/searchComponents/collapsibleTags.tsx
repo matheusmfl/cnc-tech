@@ -1,13 +1,33 @@
 'use client'
 /* eslint-disable prettier/prettier */
 
+
 import * as Collapsible from '@radix-ui/react-collapsible'
 
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
 import { useState } from 'react'
+import { getCategories } from '../../../../sanity/sanity-utils'
+import { Tags } from './tagsComponents/Tags'
+// import { TagsContainer } from './tagsComponents/TagsContainer'
 
-export function CollapsibleTags() {
+async function TagsContainer() {
+  const categories = await getCategories()
+  return (
+    <div className="px-5 py-10 flex flex-row flex-wrap gap-2">
+      {categories.map((category) => {
+        return (
+          <div key={category._id}>
+            <Tags title={category.title} />
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+
+export async function CollapsibleTags() {
   /* eslint-disable no-unused-vars */
 
   const [open, setOpen] = useState(false)
@@ -28,7 +48,9 @@ export function CollapsibleTags() {
       </div>
       <Collapsible.Content className="CollapsibleContent">
         <div>
-          Teste de conhecimento
+          <h1>teste</h1>
+          {/* @ts-expect-error Async Server Component */}
+          <TagsContainer />
         </div>
       </Collapsible.Content>
     </Collapsible.Root>
