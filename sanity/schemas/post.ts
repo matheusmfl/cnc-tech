@@ -26,6 +26,11 @@ export default defineType({
       to: { type: 'author' },
     }),
     defineField({
+      name: 'highlight',
+      title: 'Destaques',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'image',
       title: 'Banner Imagem',
       type: 'image',
