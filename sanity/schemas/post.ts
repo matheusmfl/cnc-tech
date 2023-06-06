@@ -26,7 +26,7 @@ export default defineType({
       to: { type: 'author' },
     }),
     defineField({
-      name: 'mainImage',
+      name: 'image',
       title: 'Banner Imagem',
       type: 'image',
       options: {
