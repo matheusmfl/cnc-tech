@@ -16,17 +16,39 @@ export async function getCategories(): Promise<Category[]> {
   }
 }
 
-export async function getPosts(): Promise<Posts[]> {
+export async function getPostsFeed(): Promise<Posts[]> {
   const client = createClient(clientConfig)
 
   try {
-    return await client.fetch(groq`*[_type == 'post']{
+    return await client.fetch(groq`*[_type == 'post' && highlight == false]{
       title,
       'image': image.asset->url,
-      categories[]->,
+      'categories':categories[]->,
       slug,
       _id,
       _createdAt,
+      highlight
+
+    }`)
+  } catch (error) {
+    console.log('Erro ao buscar os posts:' + error)
+    throw error
+  }
+}
+
+export async function getPostsByHighlights(): Promise<Posts[]> {
+  const client = createClient(clientConfig)
+
+  try {
+    return await client.fetch(groq`*[_type == 'post' && highlight == true]{
+      title,
+      'image': image.asset->url,
+      'categories':categories[]->,
+      slug,
+      _id,
+      _createdAt,
+      highlight
+
     }`)
   } catch (error) {
     console.log('Erro ao buscar os posts:' + error)

@@ -29,6 +29,10 @@ export default defineType({
       name: 'highlight',
       title: 'Destaques',
       type: 'boolean',
+      options: {
+        layout: 'checkbox', // Optional: specify the layout for the field in the Sanity Studio
+      },
+      initialValue: false, // Set the default value to false
     }),
     defineField({
       name: 'image',

@@ -5,6 +5,7 @@ import { Base } from './typings'
 
 export interface Posts extends Base {
   author: Author
+  highlight: boolean
   title: string
   slug: Slug
   image: Image

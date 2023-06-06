@@ -8,7 +8,7 @@ type Props = {
 
 export function BlogCard({ image, title, date }: Props) {
   return (
-    <div className="flex rounded-md border border-slate-300 shadow-md cursor-pointer">
+    <div className="flex rounded-md border border-slate-300 shadow-md cursor-pointer h-36">
       <div>
         <Image
           src={image}

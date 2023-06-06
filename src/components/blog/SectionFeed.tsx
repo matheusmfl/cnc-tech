@@ -1,14 +1,14 @@
 import { Posts } from '@/@types/post'
-import { getPostsByHighlights } from '../../../sanity/sanity-utils'
+import { getPostsFeed } from '../../../sanity/sanity-utils'
 import { BlogCard } from './BlogCard'
 
-export async function SectionDestaques() {
-  const posts: Posts[] = await getPostsByHighlights()
+export async function SectionFeed() {
+  const posts: Posts[] = await getPostsFeed()
   return (
     <section className="py-10 flex flex-col gap-7">
       <div>
         <h2 className="font-medium text-xl leading-5 text-slate-800 ">
-          Destaques no nosso blog
+          Feed CNCTech
         </h2>
       </div>
 
