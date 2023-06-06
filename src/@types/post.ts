@@ -1,8 +1,8 @@
 import { Image, PortableTextBlock, Slug } from 'sanity'
 import { Category } from './category'
 import { Author } from './author'
+import { Base } from './typings'
 
-// eslint-disable-next-line no-undef
 export interface Posts extends Base {
   author: Author
   title: string
