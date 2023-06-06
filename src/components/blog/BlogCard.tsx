@@ -8,18 +8,18 @@ type Props = {
 
 export function BlogCard({ image, title, date }: Props) {
   return (
-    <div className="flex rounded-md border border-slate-300 shadow-md">
+    <div className="flex rounded-md border border-slate-300 shadow-md cursor-pointer">
       <div>
         <Image
           src={image}
           alt=""
-          width={128}
-          height={200}
-          className="rounded-tl-md rounded-bl-md"
+          width={160}
+          height={208}
+          className="rounded-tl-md h-full rounded-bl-md object-cover"
         />
       </div>
       <div className="flex flex-col p-4 justify-between">
-        <h2 className="text-slate-800 leading-5 text-base font-medium">
+        <h2 className="text-slate-800 leading-5 text-base font-medium line-clamp-2 max-w-[120px]">
           {title}
         </h2>
         <span className="text-slate-400 font-normal text-sm">{date}</span>
