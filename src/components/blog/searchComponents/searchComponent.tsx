@@ -7,7 +7,6 @@ export function SearchComponent() {
     <div className="flex flex-col gap-5">
       <SearchInput />
       <CollapsibleTags>
-        {/* @ts-expect-error */}
         <TagsContainer />
       </CollapsibleTags>
     </div>
