@@ -89,6 +89,16 @@ export async function getPostsByTags(categoryIds: string[]): Promise<Posts[]> {
       query = groq`${query}]`
     }
 
+    query = groq`${query}{
+      title,
+      'image': image.asset->url,
+      'categories':categories[]->,
+      slug,
+      _id,
+      _createdAt,
+      highlight
+    }`
+
     return await client.fetch(query)
   } catch (error) {
     console.log('Erro ao buscar os posts: ' + error)
