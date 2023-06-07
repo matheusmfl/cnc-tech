@@ -8,9 +8,9 @@ import { BlogCard } from './BlogCard'
 export async function SectionDestaques() {
   const posts: Posts[] = await getPostsByHighlights()
   const postsByCategory: Posts[] = await getPostsByTags([
-    '64f57184-b6c7-4a5b-a39b-0d5e6b90c3e9',
     '09a52fa9-4fe8-4a38-93c3-01aa61bae1cd',
-    'b2ffc7ff-b103-41c1-9efa-1493c18eed28',
+    '4850d615-7543-4abc-ad5a-49843643dafc',
+    '64f57184-b6c7-4a5b-a39b-0d5e6b90c3e9',
   ])
   console.log(postsByCategory)
   return (
