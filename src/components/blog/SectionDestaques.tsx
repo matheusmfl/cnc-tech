@@ -1,9 +1,18 @@
 import { Posts } from '@/@types/post'
-import { getPostsByHighlights } from '../../../sanity/sanity-utils'
+import {
+  getPostsByHighlights,
+  getPostsByTags,
+} from '../../../sanity/sanity-utils'
 import { BlogCard } from './BlogCard'
 
 export async function SectionDestaques() {
   const posts: Posts[] = await getPostsByHighlights()
+  const postsByCategory: Posts[] = await getPostsByTags([
+    '64f57184-b6c7-4a5b-a39b-0d5e6b90c3e9',
+    '09a52fa9-4fe8-4a38-93c3-01aa61bae1cd',
+    'b2ffc7ff-b103-41c1-9efa-1493c18eed28',
+  ])
+  console.log(postsByCategory)
   return (
     <section className="py-10 flex flex-col gap-7">
       <div>

@@ -25,11 +25,12 @@
     "sanity": "^3.11.5",
     "swiper": "^9.3.2",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "zustand": "^4.3.8"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0",
-    "eslint-config-next": "13.4.4",
-    "eslint": "^8.41.0"
+    "eslint": "^8.41.0",
+    "eslint-config-next": "13.4.4"
   }
 }

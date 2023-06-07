@@ -68,3 +68,30 @@ export async function getAuthor(): Promise<Author[]> {
     throw error
   }
 }
+
+export async function getPostsByTags(categoryIds: string[]): Promise<Posts[]> {
+  const client = createClient(clientConfig)
+
+  try {
+    let query = groq`*[_type == 'post'`
+    if (categoryIds.length === 1) {
+      query = groq`${query} && references("${categoryIds[0]}")]`
+    } else if (categoryIds.length > 1) {
+      query = groq`${query} && (`
+      categoryIds.forEach((categoryId, index) => {
+        query = groq`${query} references("${categoryId}")`
+        if (index < categoryIds.length - 1) {
+          query = groq`${query} ||`
+        }
+      })
+      query = groq`${query})]`
+    } else {
+      query = groq`${query}]`
+    }
+
+    return await client.fetch(query)
+  } catch (error) {
+    console.log('Erro ao buscar os posts: ' + error)
+    throw error
+  }
+}
