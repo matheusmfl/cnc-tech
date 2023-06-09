@@ -8,7 +8,7 @@ export default async function BlogHome() {
       <SearchComponent />
       {/* @ts-expect-error */}
       <SectionDestaques />
-      {/* @ts-expect-error */}
+
       <SectionFeed />
     </>
   )
