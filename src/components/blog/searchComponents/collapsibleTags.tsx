@@ -15,7 +15,7 @@ export function CollapsibleTags({ children }: { children: ReactNode }) {
   /* eslint-disable no-unused-vars */
 
   const [open, setOpen] = useState(false)
-  console.log(open)
+
 
   return (
     <Collapsible.Root open={open} onOpenChange={setOpen}>

@@ -3,6 +3,7 @@ import { createClient, groq } from 'next-sanity'
 import { clientConfig } from './config/client-config'
 import { Posts } from '@/@types/post'
 import { Author } from '@/@types/author'
+import imageUrlBuilder from '@sanity/image-url'
 
 export async function getCategories(): Promise<Category[]> {
   const client = createClient(clientConfig)
@@ -68,6 +69,27 @@ export async function getAuthor(): Promise<Author[]> {
     throw error
   }
 }
+
+export async function getPage(slug: string): Promise<Posts> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "post" && slug.current == $slug][0]{
+  title,
+  'author': author-> name,
+  'image': image.asset->url,
+  'categories':categories[]->title,
+   _id,
+   _createdAt,
+   body,
+  "slug": slug.current,
+  }`,
+    { slug },
+  )
+}
+
+export const builder = imageUrlBuilder({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: 'production',
+})
 
 export async function getPostsByTags(categoryIds: string[]): Promise<Posts[]> {
   const client = createClient(clientConfig)

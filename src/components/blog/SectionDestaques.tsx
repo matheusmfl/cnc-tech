@@ -6,7 +6,7 @@ export async function SectionDestaques() {
   const posts: Posts[] = await getPostsByHighlights()
 
   return (
-    <section className="py-10 flex flex-col gap-7">
+    <section className="py-10 flex flex-col gap-7 ">
       <div>
         <h2 className="font-medium text-xl leading-5 text-slate-800 ">
           Destaques no nosso blog

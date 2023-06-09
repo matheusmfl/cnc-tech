@@ -21,7 +21,6 @@ export function SectionFeed() {
 
     fetchPosts()
   }, [selectedTags, getPosts])
-  console.log(posts)
 
   return (
     <section className="py-10 flex flex-col gap-7">
