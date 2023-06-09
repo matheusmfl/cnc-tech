@@ -3,6 +3,7 @@ import '../globals.css'
 import { Roboto } from 'next/font/google'
 import { Header } from '@/components/home/header/Header'
 import { Footer } from '@/components/home/footer/Footer'
+import Head from 'next/head'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -17,7 +18,13 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} font-sans`}>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <body className={`${roboto.className} font-roboto`}>
         <Header />
         <main className="bg-transparent font-sans">{children}</main>
         <Footer />

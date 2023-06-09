@@ -3,6 +3,7 @@ import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
 import { builder, getPage } from '../../../../../sanity/sanity-utils'
 import { SectionDestaques } from '@/components/blog/SectionDestaques'
+import { formatDate } from '@/lib/date-fns'
 
 type Props = {
   params: { slug: string }
@@ -20,8 +21,8 @@ export default async function Page({ params }: Props) {
 
       <section className="flex flex-col gap-3 py-4 px-5 font-sans">
         {/* DateDiv */}
-        <span className="text-slate-400 text-sm leading-5 font-normal">
-          {page._createdAt}
+        <span className="text-slate-400 text-md leading-5 font-normal">
+          {formatDate(page._createdAt)}
         </span>
         {/* author div */}
         <div>
@@ -49,28 +50,28 @@ export default async function Page({ params }: Props) {
             components={{
               block: {
                 h1: ({ children }) => (
-                  <h1 className="text-4xl text-slate-900 font-bold leading-9 pb-4">
+                  <h1 className="text-3xl text-slate-900 font-bold leading-9 pb-2">
                     {children}
                   </h1>
                 ),
                 h2: ({ children }) => (
-                  <h2 className="text-3xl text-slate-900 font-bold leading-8 pb-4">
+                  <h2 className="text-2xl text-slate-900 font-bold leading-8 pb-2">
                     {children}
                   </h2>
                 ),
                 h3: ({ children }) => (
-                  <h3 className="text-2xl text-slate-900 font-bold leading-6 pb-4">
+                  <h3 className="text-xl text-slate-900 font-bold leading-6 pb-2">
                     {children}
                   </h3>
                 ),
 
                 h4: ({ children }) => (
-                  <h4 className="text-xl text-slate-900 font-bold leading-6 pb-4">
+                  <h4 className="text-lg text-slate-900 font-bold leading-6 pb-2">
                     {children}
                   </h4>
                 ),
                 normal: ({ children }) => (
-                  <p className="text-base text-slate-900 font-normal leading-6 pb-4">
+                  <p className="text-base text-slate-900 font-normal leading-6 pb-2">
                     {children}
                   </p>
                 ),
@@ -99,7 +100,7 @@ export default async function Page({ params }: Props) {
               },
               types: {
                 image: ({ value }) => (
-                  <div className="text-4xl pb-4">
+                  <div className="text-4xl pb-2">
                     <Image
                       src={builder.image(value).toString()}
                       alt={value.alt}
