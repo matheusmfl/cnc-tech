@@ -32,7 +32,7 @@ export default async function Page({ params }: Props) {
           </span>
         </div>
         {/* Tag Div */}
-        <div className="pt-2">
+        <div className="pt-2 flex gap-2">
           {page.categories.map((category, index) => {
             return (
               <button

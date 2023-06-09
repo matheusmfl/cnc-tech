@@ -1,3 +1,4 @@
+import { formatDate } from '@/lib/date-fns'
 import Image from 'next/image'
 
 type Props = {
@@ -19,10 +20,12 @@ export function BlogCard({ image, title, date }: Props) {
         />
       </div>
       <div className="flex flex-col p-4 justify-between">
-        <h2 className="text-slate-800 leading-5 text-base font-medium line-clamp-2 max-w-[120px]">
+        <h2 className="text-slate-800 leading-5 text-base font-medium line-clamp-3 max-w-[120px]">
           {title}
         </h2>
-        <span className="text-slate-400 font-normal text-sm">{date}</span>
+        <span className="text-slate-400 font-normal text-sm">
+          {formatDate(date)}
+        </span>
       </div>
     </div>
   )

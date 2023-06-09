@@ -4,6 +4,7 @@ import { Posts } from '@/@types/post'
 import { BlogCard } from './BlogCard'
 import { useQueryStore } from '../../../stateZustand/BlogQuery'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 export function SectionFeed() {
   const { getPosts, selectedTags } = useQueryStore()
@@ -35,12 +36,14 @@ export function SectionFeed() {
 
         {posts.map((post, index) => {
           return (
-            <BlogCard
-              key={post._id}
-              date={post._createdAt}
-              image={post.image}
-              title={post.title}
-            />
+            <Link href={`blogpage/${post.slug.current}`} key={post._id}>
+              <BlogCard
+                key={post._id}
+                date={post._createdAt}
+                image={post.image}
+                title={post.title}
+              />
+            </Link>
           )
         })}
       </div>

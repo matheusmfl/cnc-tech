@@ -1,6 +1,7 @@
 import { Posts } from '@/@types/post'
 import { getPostsByHighlights } from '../../../sanity/sanity-utils'
 import { BlogCard } from './BlogCard'
+import Link from 'next/link'
 
 export async function SectionDestaques() {
   const posts: Posts[] = await getPostsByHighlights()
@@ -18,12 +19,13 @@ export async function SectionDestaques() {
 
         {posts.map((post, index) => {
           return (
-            <BlogCard
-              key={post._id}
-              date={post._createdAt}
-              image={post.image}
-              title={post.title}
-            />
+            <Link href={`blogpage/${post.slug.current}`} key={post._id}>
+              <BlogCard
+                date={post._createdAt}
+                image={post.image}
+                title={post.title}
+              />
+            </Link>
           )
         })}
       </div>

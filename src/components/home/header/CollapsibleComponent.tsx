@@ -6,6 +6,7 @@ import { Search, Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 import { MenuItem } from './MenuItem'
+import Link from 'next/link'
 
 export function CollapsibleComponent() {
   const [open, setOpen] = useState(false)
@@ -13,7 +14,9 @@ export function CollapsibleComponent() {
     <Collapsible.Root open={open} onOpenChange={setOpen}>
       <header className="bg-slate-100 w-full color-gray-700 leading-5 flex justify-between p-5 items-center border-b border-solid border-slate-400">
         <Search size={20} />
-        <Image src={logo} alt="Logo" />
+        <Link href={'/'}>
+          <Image src={logo} alt="Logo" />
+        </Link>
         <Collapsible.Trigger asChild>
           <button>{open ? <X size={20} /> : <Menu size={20} />}</button>
         </Collapsible.Trigger>
