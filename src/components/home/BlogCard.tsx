@@ -1,21 +1,22 @@
 import Image from 'next/image'
-import imgGeneric from '../../assets/genericImg.svg'
 
-export function BlogCard() {
+type Props = {
+  image: any
+  title: string
+  description: string
+}
+export function BlogCard({ image, title, description }: Props) {
   return (
-    <div className="rounded-3xl overflow-hidden flex flex-col">
+    <div className="rounded-3xl overflow-hidden flex flex-col shadow-lg">
       <div className="aspect-square h-60 flex items-center justify-center bg-white">
-        <Image src={imgGeneric} alt="Generic Image" />
+        <Image src={image} alt="Generic Image" width={1000} height={1000} />
       </div>
       <div className="flex flex-col gap-4 bg-slate-100 px-4 py-5">
-        <h3 className="title text-slate-800">
-          Como um maquinário integrado te ajuda a produzir mais?
+        <h3 className="title font-medium leading-6 text-lg text-slate-800">
+          {title}
         </h3>
 
-        <span className="subtitle text-slate-900">
-          Desde gestão automatizada de estoque até a diminuição de intervenções
-          manuais, logística e gestão de recursos de forma inteligente
-        </span>
+        <span className="subtitle text-slate-900">{description}</span>
 
         <div className="w-full pt-7 flex justify-end">
           <a
