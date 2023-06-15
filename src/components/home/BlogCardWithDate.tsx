@@ -1,16 +1,17 @@
 import Image from 'next/image'
-import blogGenericImage from '../../assets/blogGenericImage.png'
 
 interface blogCardWithDateProps {
   title: string
   date: string
   category: string
+  image: any
 }
 
 export function BlogCardWithDate({
   title,
   date,
   category,
+  image,
 }: blogCardWithDateProps) {
   return (
     <div className="shadow-lg flex flex-col rounded-md overflow-hidden">
@@ -25,8 +26,13 @@ export function BlogCardWithDate({
       </div>
 
       {/* container com imagem */}
-      <div>
-        <Image src={blogGenericImage} alt="Imagem genérica do blog!" />
+      <div className="h-[240px]">
+        <Image
+          src={image}
+          alt="Imagem genérica do blog!"
+          width={600}
+          height={600}
+        />
       </div>
     </div>
   )

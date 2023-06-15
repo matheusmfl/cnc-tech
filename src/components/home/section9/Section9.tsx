@@ -1,8 +1,12 @@
+import { Posts } from '@/@types/post'
+import { getPostsFeed } from '../../../../sanity/sanity-utils'
 import { BlogCardWithDate } from '../BlogCardWithDate'
 import { ArrowButton } from '../Button'
 import { SectionNameComponent } from '../SectionNameComponent'
+import Link from 'next/link'
 
-export function Section9() {
+export async function Section9() {
+  const posts: Posts[] = await getPostsFeed()
   return (
     <section className="flex flex-col gap-10 px-5 py-10 bg-gray-300">
       {/* Nome da Sessão */}
@@ -14,29 +18,18 @@ export function Section9() {
 
       {/* sessão dos cards */}
       <div className="flex flex-col gap-5">
-        <BlogCardWithDate
-          title="Soluções avançadas de usinagens e furação,
-         desde uma máquina individual até a interligação em células de produção"
-          category="Produção em Rede"
-          date="22/03/2023"
-        />
-        <BlogCardWithDate
-          title="Foco em flexibilidade e eficiência de custos:"
-          category="Eventos"
-          date="03/05/2023"
-        />
-        <BlogCardWithDate
-          title="Soluções avançadas de usinagens e furação,
-         desde uma máquina individual até a interligação em células de produção"
-          category="Produção em Rede"
-          date="22/03/2023"
-        />
-        <BlogCardWithDate
-          title="Soluções avançadas de usinagens e furação,
-         desde uma máquina individual até a interligação em células de produção"
-          category="Produção em Rede"
-          date="22/03/2023"
-        />
+        {posts.map((post, index) => {
+          return (
+            <Link href={`blogpage/${post.slug.current}`} key={post._id}>
+              <BlogCardWithDate
+                date={'25/02/2023'}
+                image={post.image}
+                category="Tecnologia"
+                title={post.title}
+              />
+            </Link>
+          )
+        })}
       </div>
 
       {/* sessão com texto final + botão */}
