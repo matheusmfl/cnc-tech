@@ -11,7 +11,7 @@ const roboto = Roboto({
 
 export const metadata = {
   title: 'CNC-TECH',
-  description: 'em desenvolvimento...',
+  description: 'em desenvolvimento..',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {

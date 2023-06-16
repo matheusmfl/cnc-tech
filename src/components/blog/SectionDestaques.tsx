@@ -10,7 +10,7 @@ export async function SectionDestaques() {
     <section className="py-10 flex flex-col gap-7 ">
       <div>
         <h2 className="font-bold text-xl leading-5 text-slate-800 ">
-          Destaques no nosso blog
+          Destaques no nosso blog.
         </h2>
       </div>
 
