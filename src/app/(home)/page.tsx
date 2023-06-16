@@ -28,6 +28,7 @@ export default function Home() {
       <Section7 />
       <Section8 />
       <SectionFeedbacks />
+      {/* @ts-expect-error */}
       <Section9 />
       <Section10 />
       <Section11 />
