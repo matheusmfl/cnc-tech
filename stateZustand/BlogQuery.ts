@@ -5,7 +5,9 @@ import { Posts } from '@/@types/post'
 interface BlogQuery {
   selectedTags: string[]
   toggleTag: (tagId: string) => void
-  getPosts: () => Promise<Posts[]>
+  getPosts: () => Promise<Posts[] | undefined>
+  currentPage: number
+  setCurrentPage: (page: number) => void
 }
 
 export const useQueryStore = create<BlogQuery>((set, get) => ({
@@ -21,12 +23,27 @@ export const useQueryStore = create<BlogQuery>((set, get) => ({
   },
   getPosts: async () => {
     const selectedTags = get().selectedTags
+    const selectedPages = get().currentPage
 
-    const posts =
-      selectedTags.length === 0
-        ? await getPostsFeed()
-        : await getPostsByTags(selectedTags)
+    if (selectedPages && selectedPages < 2) {
+      const posts =
+        selectedTags.length === 0
+          ? await getPostsFeed()
+          : await getPostsByTags(selectedTags)
 
-    return posts
+      return posts
+    } else if (selectedPages && selectedPages > 1) {
+      console.log('entrou')
+      const posts =
+        selectedTags.length === 0
+          ? await getPostsFeed(selectedPages)
+          : await getPostsByTags(selectedTags)
+
+      return posts
+    }
+  },
+  currentPage: 1,
+  setCurrentPage: (page) => {
+    set({ currentPage: page })
   },
 }))
