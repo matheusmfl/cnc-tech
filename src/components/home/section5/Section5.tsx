@@ -20,7 +20,9 @@ export async function Section5() {
           return (
             <Link href={`blogpage/${post.slug.current}`} key={post._id}>
               <BlogCard
-                description={post.slug.toString()}
+                description={
+                  'We’ve trained a model called ChatGPT which interacts in a conversational way. The dialogue format makes it possible for ChatGPT to answer followup questions, admit its mistakes'
+                }
                 image={post.image}
                 title={post.title}
               />

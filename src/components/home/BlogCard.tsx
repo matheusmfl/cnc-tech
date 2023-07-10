@@ -16,7 +16,9 @@ export function BlogCard({ image, title, description }: Props) {
           {title}
         </h3>
 
-        <span className="subtitle text-slate-900">{description}</span>
+        <span className="subtitle text-slate-900 line-clamp-4">
+          {description}
+        </span>
 
         <div className="w-full pt-7 flex justify-end">
           <a

@@ -26,12 +26,13 @@ export function BlogCardWithDate({
       </div>
 
       {/* container com imagem */}
-      <div className="h-[240px]">
+      <div className="">
         <Image
           src={image}
           alt="Imagem genérica do blog!"
           width={600}
           height={600}
+          className="h-full"
         />
       </div>
     </div>

@@ -7,7 +7,7 @@ export function Section11() {
       {/* Nome da Sessão */}
       <SectionNameComponent>
         <h2 className="title text-black">
-          <strong>Converse</strong> com um representante{' '}
+          <strong>Converse</strong> com um representante <br />
           <strong>CNCTech</strong>
         </h2>
       </SectionNameComponent>

@@ -1,5 +1,5 @@
 import { SectionNameComponent } from '../SectionNameComponent'
-import imgGereneric from '../../../assets/genericImg.svg'
+import imgGereneric from '../../../assets/atendimento.png'
 import Image from 'next/image'
 
 export function Section7() {
@@ -21,13 +21,15 @@ export function Section7() {
           outras capacitações para auxiliar nossos clientes no seu crescimento.
         </span>
 
-        <div className="aspect-square rounded-lg shadow-2xl flex items-center bg-white justify-center">
-          <Image
-            src={imgGereneric}
-            alt="Imagem Genérica"
-            className="w-full h-full"
-          />
-        </div>
+        {/* <div className="aspect-square rounded-lg shadow-2xl flex items-center bg-white justify-center"> */}
+        <Image
+          src={imgGereneric}
+          alt="Imagem Genérica"
+          className="w-full h-full mt-2"
+          width={1200}
+          height={1200}
+        />
+        {/* </div> */}
       </div>
     </section>
   )
