@@ -15,8 +15,6 @@ export function SliderComponent({ element }: { element: ReactNode[] }) {
         pagination={{ enabled: true, clickable: true }}
         spaceBetween={50}
         slidesPerView={1}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
         modules={[Pagination]}
         style={{ overflow: 'visible' }}
       >
