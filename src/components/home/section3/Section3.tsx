@@ -2,13 +2,19 @@ import { NextButton } from '../Button'
 
 export function Section3() {
   return (
-    <section className="p-10 flex flex-col bg-gray-700 gap-7 text-white">
-      <h2 className="title leading-7 text-justify text-slate-50">
-        <strong>
-          Dúvidas para encontrar a tecnologia certa para a sua necessidade.
-        </strong>
-      </h2>
-      <div className="flex justify-end w-full ">
+    <section className="flex flex-col py-5 px-5 gap-5 bg-[#F0F2F4]">
+      {/* Text DIV */}
+      <div>
+        <h2 className="font-roboto text-lg font-semibold text-[#1E293B]">
+          <span className="font-roboto text-[28px] leading-[36px] font-medium text-[#3C90CE]">
+            Fábrica 4.0
+          </span>
+          <br /> as melhores soluções em automação para você
+        </h2>
+      </div>
+
+      {/* ButtonDIV */}
+      <div className="flex w-full text-slate-900 border-slate-900 justify-end overflow-hidden">
         <NextButton />
       </div>
     </section>
