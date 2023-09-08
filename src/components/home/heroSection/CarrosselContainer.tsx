@@ -22,8 +22,6 @@ export function CarrosselContainer() {
         delay: 5600,
       }}
       loop
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>
         <Container1 />

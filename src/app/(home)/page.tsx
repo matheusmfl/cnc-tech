@@ -7,7 +7,7 @@ import { Section11 } from '@/components/home/section11/Section11'
 import { Section2 } from '@/components/home/section2/Section2'
 import { Section3 } from '@/components/home/section3/Section3'
 import { Section4 } from '@/components/home/section4/Section4'
-import { Section5 } from '@/components/home/section5/Section5'
+import { NewSection5 } from '@/components/home/section5/NewSection5'
 import { Section6 } from '@/components/home/section6/Section6'
 import { Section7 } from '@/components/home/section7/Section7'
 import { Section8 } from '@/components/home/section8/Section8'
@@ -22,8 +22,7 @@ export default function Home() {
       <Section2 />
       <Section3 />
       <Section4 />
-      {/* @ts-expect-error */}
-      <Section5 />
+      <NewSection5 />
       <Section6 />
       <Section7 />
       <Section8 />
