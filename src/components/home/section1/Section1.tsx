@@ -1,17 +1,21 @@
-import { Button } from '../Button'
+import { NextButton } from '../Button'
 
 export function Section1() {
   return (
-    <section className="flex flex-col py-10 px-5 gap-5 section-white">
-      <div className="section-white-before"></div>
-      <span className="text-lg text-slate-800 font-medium w-[310px]">
-        Fale com nossos representantes e veja as melhores soluções pro seu
-        negócio.
-      </span>
-      <div className="h-14">
-        <Button>
-          <strong>Falar conosco</strong>{' '}
-        </Button>
+    <section className="flex flex-col py-5 px-5 gap-5 bg-[#1F2A68]">
+      {/* Text DIV */}
+      <div>
+        <h2 className="font-roboto text-lg font-medium text-slate-50">
+          <span className="font-roboto text-[28px] leading-[36px] font-normal text-[#3C90CE]">
+            Pronta entrega
+          </span>{' '}
+          conheça as tecnologias disponíveis para entrega imediata.
+        </h2>
+      </div>
+
+      {/* ButtonDIV */}
+      <div className="flex w-full text-white justify-end overflow-hidden">
+        <NextButton />
       </div>
     </section>
   )
