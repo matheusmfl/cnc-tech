@@ -1,9 +1,9 @@
 export function Container1() {
   // Video Container
   return (
-    <div className="w-full">
+    <div className="w-full aspect-video max-h-[480px] overflow-hidden md:flex md:items-center">
       <video
-        className="w-full"
+        className="w-full h-auto"
         autoPlay // Configurar autoplay para o vídeo
         controls={false} // Remover os controles do vídeo
         loop // Opcional: configurar o loop do vídeo

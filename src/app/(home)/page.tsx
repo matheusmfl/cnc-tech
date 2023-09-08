@@ -16,7 +16,7 @@ import { SectionFeedbacks } from '@/components/home/sectionFeedbacks/sectionFeed
 
 export default function Home() {
   return (
-    <div className=" bg-blue-900">
+    <div className="">
       <HeroSection />
       <Section1 />
       <Section2 />
