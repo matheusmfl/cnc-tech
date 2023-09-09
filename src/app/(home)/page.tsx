@@ -6,6 +6,7 @@ import { Section10 } from '@/components/home/section10/Section10'
 import { Section11 } from '@/components/home/section11/Section11'
 import { Section2 } from '@/components/home/section2/Section2'
 import { Section3 } from '@/components/home/section3/Section3'
+import { Section4Middle } from '@/components/home/section4.5/Section4middle'
 import { Section4 } from '@/components/home/section4/Section4'
 import { NewSection5 } from '@/components/home/section5/NewSection5'
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Section2 />
       <Section3 />
       <Section4 />
+      <Section4Middle />
       <NewSection5 />
       {/* <Section6 />
       <Section7 />

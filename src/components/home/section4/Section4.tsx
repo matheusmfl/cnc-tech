@@ -10,6 +10,14 @@ export function Section4() {
       <div className="rounded-xl">
         <CarrosselProductComponent />
       </div>
+
+      {/* Button */}
+
+      <a href="#" className="w-full">
+        <button className="py-3 text-center rounded-[4px] bg-[#1F2A68] w-full font-roboto text-slate-50 font-sm font-medium">
+          Ver mais &gt;{' '}
+        </button>
+      </a>
     </section>
   )
 }

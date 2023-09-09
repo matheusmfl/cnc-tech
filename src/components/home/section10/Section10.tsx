@@ -1,16 +1,13 @@
-import { ArrowButton } from '../Button'
-import { SectionNameComponent } from '../SectionNameComponent'
 import { VideoCard } from '../VideoCard'
 
 export function Section10() {
   return (
     <section className="flex flex-col gap-5 px-5 py-10 bg-gray-700">
       {/* Nome da Sessão */}
-      <SectionNameComponent>
-        <h2 className="title text-black">
-          <strong>Últimos</strong> vídeos
-        </h2>
-      </SectionNameComponent>
+
+      <h2 className="text-2xl font-roboto font-medium leading-[32px] text-slate-800">
+        <strong>Últimos</strong> vídeos
+      </h2>
 
       {/* container com os CardsVideos */}
       <div className="flex flex-col gap-5">
@@ -42,9 +39,9 @@ export function Section10() {
           CNCTech.
         </span>
         {/* div com botão usado para posicionar no final do conteúdo */}
-        <div className="flex justify-end border-slate-50 text-slate-50">
-          <ArrowButton> Veja mais vídeos</ArrowButton>
-        </div>
+        <button className="w-full rounded-[4px] bg-[#3C90CE] font-roboto text-sm font-medium text-white py-3">
+          Veja mais vídeos &gt;
+        </button>
       </div>
     </section>
   )
