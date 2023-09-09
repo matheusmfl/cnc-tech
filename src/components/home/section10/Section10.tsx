@@ -2,10 +2,10 @@ import { VideoCard } from '../VideoCard'
 
 export function Section10() {
   return (
-    <section className="flex flex-col gap-5 px-5 py-10 bg-gray-700">
+    <section className="flex flex-col gap-5 px-5 py-10 bg-[#1F2A68]">
       {/* Nome da Sessão */}
 
-      <h2 className="text-2xl font-roboto font-medium leading-[32px] text-slate-800">
+      <h2 className="text-2xl font-roboto font-medium leading-[32px] text-slate-50">
         <strong>Últimos</strong> vídeos
       </h2>
 
@@ -33,7 +33,7 @@ export function Section10() {
       </div>
 
       {/* sessão com texto final + botão */}
-      <div className="flex flex-col gap-[70px] pt-5">
+      <div className="flex flex-col gap-5 pt-5">
         <span className="text-slate-50 font-normal text-base leading-6">
           Leia mais sobre tecnologia, indústria e produtividade no blog da
           CNCTech.
