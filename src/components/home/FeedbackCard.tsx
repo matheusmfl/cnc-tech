@@ -4,7 +4,7 @@ import avatar from '../../assets/avatar.svg'
 export function FeedbackCard() {
   return (
     <div
-      className="flex flex-col rounded-lg bg-sky-900 text-white
+      className="flex flex-col rounded-lg bg-[#1F2A68] text-white
      items-center justify-center px-10 text-center "
     >
       <div className="-translate-y-14 ">

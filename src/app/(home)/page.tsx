@@ -8,30 +8,28 @@ import { Section2 } from '@/components/home/section2/Section2'
 import { Section3 } from '@/components/home/section3/Section3'
 import { Section4 } from '@/components/home/section4/Section4'
 import { NewSection5 } from '@/components/home/section5/NewSection5'
-import { Section6 } from '@/components/home/section6/Section6'
-import { Section7 } from '@/components/home/section7/Section7'
-import { Section8 } from '@/components/home/section8/Section8'
+
 import { Section9 } from '@/components/home/section9/Section9'
 import { SectionFeedbacks } from '@/components/home/sectionFeedbacks/sectionFeedbacks'
 
 export default function Home() {
   return (
-    <div className="">
+    <main className="">
       <HeroSection />
       <Section1 />
       <Section2 />
       <Section3 />
       <Section4 />
       <NewSection5 />
-      <Section6 />
+      {/* <Section6 />
       <Section7 />
-      <Section8 />
+      <Section8 /> */}
       <SectionFeedbacks />
       {/* @ts-expect-error */}
       <Section9 />
       <Section10 />
       <Section11 />
       <Footer />
-    </div>
+    </main>
   )
 }
