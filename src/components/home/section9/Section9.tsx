@@ -2,7 +2,6 @@ import { Posts } from '@/@types/post'
 import { getPostsFeed } from '../../../../sanity/sanity-utils'
 import { BlogCardWithDate } from '../BlogCardWithDate'
 import { ArrowButton } from '../Button'
-import { SectionNameComponent } from '../SectionNameComponent'
 import Link from 'next/link'
 
 export async function Section9() {
@@ -10,11 +9,10 @@ export async function Section9() {
   return (
     <section className="flex flex-col gap-10 px-5 py-10 bg-gray-300">
       {/* Nome da Sessão */}
-      <SectionNameComponent>
-        <h2 className="title text-black">
-          Novidades <strong>CNCTech</strong>
-        </h2>
-      </SectionNameComponent>
+
+      <h2 className="text-2xl font-roboto font-medium leading-[32px] text-slate-800">
+        Novidades <strong>CNCTech</strong>
+      </h2>
 
       {/* sessão dos cards */}
       <div className="flex flex-col gap-5">
