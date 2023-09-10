@@ -12,7 +12,7 @@ export function CarrosselContainer() {
   SwiperCore.use([Autoplay, Pagination])
   return (
     <Swiper
-      className="max-h-[480px]"
+      className="max-h-[480px] max-w-full"
       spaceBetween={50}
       slidesPerView={1}
       pagination={{

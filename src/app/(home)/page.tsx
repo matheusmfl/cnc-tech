@@ -1,4 +1,5 @@
 import { Footer } from '@/components/home/footer/Footer'
+import { Header } from '@/components/home/header/Header'
 
 import { HeroSection } from '@/components/home/heroSection/HeroSection'
 import { Section1 } from '@/components/home/section1/Section1'
@@ -15,23 +16,25 @@ import { SectionFeedbacks } from '@/components/home/sectionFeedbacks/sectionFeed
 
 export default function Home() {
   return (
-    <main className="">
-      <HeroSection />
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Section4 />
-      <Section4Middle />
-      <NewSection5 />
-      {/* <Section6 />
-      <Section7 />
-      <Section8 /> */}
-      <SectionFeedbacks />
-      {/* @ts-expect-error */}
-      <Section9 />
-      <Section10 />
-      <Section11 />
-      <Footer />
+    <main>
+      <div className="md:fixed md:left-0 z-10">
+        <Header />
+      </div>
+      <div className="z-0 md:ml-[320px]">
+        <HeroSection />
+        <Section1 />
+        <Section2 />
+        <Section3 />
+        <Section4 />
+        <Section4Middle />
+        <NewSection5 />
+        <SectionFeedbacks />
+        {/* @ts-expect-error */}
+        <Section9 />
+        <Section10 />
+        <Section11 />
+        <Footer />
+      </div>
     </main>
   )
 }

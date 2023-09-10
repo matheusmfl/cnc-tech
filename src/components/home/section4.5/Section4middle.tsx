@@ -7,7 +7,7 @@ export function Section4Middle() {
     <section className="bg-[#F0F2F4] py-10 px-5 flex flex-col gap-5 rounded-lg overflow-hidden">
       {/* logo div */}
       <div className="flex items-center justify-center">
-        <Image src={logo} alt="nossa logomarca" className="h-1/3 w-1/3" />
+        <Image src={logo} alt="nossa logomarca" className="w-[141px]" />
       </div>
 
       {/* Card */}
