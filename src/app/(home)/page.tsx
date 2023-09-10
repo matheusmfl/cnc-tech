@@ -1,4 +1,6 @@
 import { Footer } from '@/components/home/footer/Footer'
+import { AsideDesktop } from '@/components/home/header/AsideDesktop'
+import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 
 import { HeroSection } from '@/components/home/heroSection/HeroSection'
@@ -19,8 +21,10 @@ export default function Home() {
     <main>
       <div className="md:fixed md:left-0 z-10">
         <Header />
+        <AsideDesktop />
       </div>
       <div className="z-0 md:ml-[320px]">
+        <DesktopLogo />
         <HeroSection />
         <Section1 />
         <Section2 />
