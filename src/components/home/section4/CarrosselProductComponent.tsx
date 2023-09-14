@@ -11,8 +11,13 @@ export function CarrosselProductComponent() {
   SwiperCore.use([Autoplay, Pagination])
   return (
     <Swiper
-      className="max-h-[480px] rounded-xl"
-      spaceBetween={50}
+      className="max-h-[480px]"
+      breakpoints={{
+        640: {
+          slidesPerView: 3,
+        },
+      }}
+      spaceBetween={20}
       slidesPerView={1}
       pagination={{
         clickable: true,

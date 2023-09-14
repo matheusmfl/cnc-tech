@@ -3,18 +3,18 @@ import genericImage from '../../../assets/ProductImgGeneric.jpeg'
 
 export function ProductComponent() {
   return (
-    <div className="flex flex-col w-full rounded-xl shadow-xl">
+    <div className="flex flex-col w-full rounded-lg shadow-xl">
       {/* Image DIV */}
       <div>
         <Image
           src={genericImage}
           alt="Imagem do produto"
-          className="max-h-[240px]"
+          className="max-h-[240px] rounded-t-lg"
         />
       </div>
 
       {/* Description DIV */}
-      <div className="flex flex-col px-5 pt-5 pb-8 gap-3 bg-[#F1F5F9]">
+      <div className="flex flex-col px-5 pt-5 pb-8 gap-3 bg-[#F1F5F9] rounded-b-lg">
         <h3 className="text-slate-800 font-roboto font-medium leading-[24px] text-lg">
           Robô FEEDBOT na CNC DRILLTEQ V-500
         </h3>
