@@ -20,7 +20,7 @@ export async function Section9() {
 
       {/* sessão dos cards */}
       <div
-        className={`flex gap-5 md:overflow-x-scroll`}
+        className={`flex flex-col md:flex-row gap-5 md:overflow-x-scroll`}
         style={{
           overflowX: shouldAddScroll ? 'auto' : 'hidden', // Adicione overflowX para ativar/desativar a rolagem
           display: 'flex', // Garante que os elementos fiquem em uma única linha

@@ -11,14 +11,14 @@ export function NewSection5() {
       </h2>
 
       {/* container de cards */}
-      <div className="md:grid md:grid-cols-3 md:gap-5">
+      <div className="flex flex-col gap-5 md:grid md:grid-cols-3 md:gap-5">
         {/* Primeiro CARD */}
 
         <div className="flex flex-col rounded-md shadow-lg md:flex-col-reverse">
           <Image
             src={img1}
             alt="Suporte e atendimento CNC-Tech"
-            className="aspect-video rounded-t-lg md:h-[240px] md:object-cover md:rounded-t-none"
+            className="aspect-video rounded-t-lg md:h-[240px] object-cover md:rounded-t-none"
           />
 
           <div className="p-5 flex flex-col gap-5 md:bg-slate-50 md:h-[163px] md:justify-between">
@@ -43,7 +43,7 @@ export function NewSection5() {
           <Image
             src={img2}
             alt="Suporte e atendimento CNC-Tech"
-            className="aspect-video rounded-t-lg md:h-[240px] md:object-cover md:rounded-t-none"
+            className="aspect-video rounded-t-lg md:h-[240px] object-cover md:rounded-t-none"
           />
 
           <div className="p-5 flex flex-col gap-5 md:bg-slate-50 md:h-[163px] md:justify-between">
@@ -68,7 +68,7 @@ export function NewSection5() {
           <Image
             src={img3}
             alt="Suporte e atendimento CNC-Tech"
-            className="aspect-video rounded-t-lg md:h-[240px] md:object-cover md:rounded-t-none"
+            className="aspect-video rounded-t-lg md:h-[240px] object-cover md:rounded-t-none"
           />
 
           <div className="p-5 flex flex-col gap-5 md:bg-slate-50 md:h-[163px] md:justify-between">
