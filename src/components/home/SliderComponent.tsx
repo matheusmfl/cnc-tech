@@ -9,10 +9,14 @@ import { ReactNode } from 'react'
 
 export function SliderComponent({ element }: { element: ReactNode[] }) {
   return (
-    <div className=" bg-slate-200 rounded-3xl">
+    <div>
       <Swiper
-        scrollbar={{ el: '.swiper-scrollbar', draggable: true, enabled: true }}
         pagination={{ enabled: true, clickable: true }}
+        breakpoints={{
+          640: {
+            slidesPerView: 3,
+          },
+        }}
         spaceBetween={50}
         slidesPerView={1}
         modules={[Pagination]}

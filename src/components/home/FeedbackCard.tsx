@@ -5,7 +5,7 @@ export function FeedbackCard() {
   return (
     <div
       className="flex flex-col rounded-lg bg-[#1F2A68] text-white
-     items-center justify-center px-10 text-center "
+     items-center justify-center px-10 md:px-2 md:items-center text-center md:w-[244px] "
     >
       <div className="-translate-y-14 ">
         <Image src={avatar} alt="Avatar" />
