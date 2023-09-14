@@ -26,9 +26,11 @@ export default function Home() {
       <div className="z-0 md:ml-[320px]">
         <DesktopLogo />
         <HeroSection />
-        <Section1 />
-        <Section2 />
-        <Section3 />
+        <div className="md:grid md:grid-cols-3 md:px-20 md:py-10 md:bg-[#1F2A68]">
+          <Section1 />
+          <Section2 />
+          <Section3 />
+        </div>
         <Section4 />
         <Section4Middle />
         <NewSection5 />
