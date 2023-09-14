@@ -24,7 +24,7 @@ export function FeedbackCard({ version }: { version: 1 | 2 | 3 }) {
         <Image src={avatar} alt="Avatar" />
       </div>
 
-      <div className="-translate-y-20 flex flex-col gap-3 h-24 md:h-full">
+      <div className="-translate-y-20 flex flex-col gap-3 h-min-24 md:h-full">
         <span className="text-base leading-6 font-normal">{spanText}</span>
         <strong className="text-base">{strongText}</strong>
       </div>
