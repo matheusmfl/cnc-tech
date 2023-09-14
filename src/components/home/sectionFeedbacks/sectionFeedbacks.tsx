@@ -14,9 +14,9 @@ export function SectionFeedbacks() {
       {/* Componente do slide renderizando os comentários */}
       <SliderComponent
         element={[
-          <FeedbackCard key={1} />,
-          <FeedbackCard key={2} />,
-          <FeedbackCard key={3} />,
+          <FeedbackCard key={1} version={1} />,
+          <FeedbackCard key={2} version={2} />,
+          <FeedbackCard key={3} version={3} />,
         ]}
       />
     </section>
