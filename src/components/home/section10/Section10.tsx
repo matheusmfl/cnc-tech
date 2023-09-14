@@ -2,7 +2,7 @@ import { VideoCard } from '../VideoCard'
 
 export function Section10() {
   return (
-    <section className="flex flex-col gap-5 px-5 py-10 bg-[#1F2A68]">
+    <section className="flex flex-col gap-5 px-5 py-10 bg-[#1F2A68] md:px-20 md:py-20 md:gap-10">
       {/* Nome da Sessão */}
 
       <h2 className="text-2xl font-roboto font-medium leading-[32px] text-slate-50">
@@ -10,7 +10,7 @@ export function Section10() {
       </h2>
 
       {/* container com os CardsVideos */}
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 md:grid md:grid-cols-3">
         <VideoCard>
           Previsão de quantidade e tempo necessário atender sua demanda,
           softwares de gestão inteligente.{' '}
@@ -39,7 +39,7 @@ export function Section10() {
           CNCTech.
         </span>
         {/* div com botão usado para posicionar no final do conteúdo */}
-        <button className="w-full rounded-[4px] bg-[#3C90CE] font-roboto text-sm font-medium text-white py-3">
+        <button className="w-full rounded-[4px] md:w-[160px] bg-[#3C90CE] font-roboto text-sm font-medium text-white py-3">
           Veja mais vídeos &gt;
         </button>
       </div>
