@@ -12,7 +12,7 @@ export function CollapsibleComponent() {
   const [open, setOpen] = useState(false)
   return (
     <Collapsible.Root open={open} onOpenChange={setOpen}>
-      <header className="bg-slate-100 md:w-[320px] md:hidden w-full color-gray-700 leading-5 flex justify-between p-5 items-center border-b border-solid border-slate-400">
+      <header className="bg-slate-100 md:w-[320px] md:hidden w-full color-gray-700 leading-5 flex justify-between p-5 items-center border-b-2 border-solid border-slate-400">
         <Search size={20} />
         <Link href={'/'}>
           <Image src={logo} alt="Logo" />
