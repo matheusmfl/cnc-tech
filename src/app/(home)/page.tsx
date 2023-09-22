@@ -25,6 +25,7 @@ export default function Home() {
       </div>
       <div className="z-0 md:ml-[320px]">
         <DesktopLogo />
+
         <HeroSection />
         <div className="md:grid md:grid-cols-3 md:px-20 md:py-10 md:bg-[#1F2A68]">
           <Section1 />
