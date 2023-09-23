@@ -13,12 +13,12 @@ export default function Product() {
         </div>
 
         {/* Container principal */}
-        <section className="z-0 ml-[320px]">
+        <section className="z-0 md:ml-[320px]">
           {/* Desktop logo com separator */}
           <DesktopLogo />
 
           {/* Container Geral */}
-          <div className="px-20 py-10 flex flex-col gap-5">
+          <div className="px-6 py-8 md:px-20 md:py-10 flex flex-col gap-5">
             <h2 className="font-roboto font-medium text-[#1F2A68] leading-[24px] text-lg md:text-[24px]">
               Centro de furação
             </h2>
@@ -32,7 +32,7 @@ export default function Product() {
             </span>
 
             {/* Div com os Cards */}
-            <div className="grid grid-cols-3 gap-5 py-5">
+            <div className="flex flex-col items-center md:grid md:grid-cols-3 gap-5 py-5">
               <ProductCard name="MSZ600AC" />
               <ProductCard name="MSZ600AC" />
               <ProductCard name="MSZ600AC" />
