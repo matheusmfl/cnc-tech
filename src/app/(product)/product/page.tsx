@@ -8,7 +8,7 @@ import { fetchProdutos } from '../../../../sanity/sanity-utils'
 export default async function Product() {
   const produtos = await fetchProdutos()
 
-  console.log(produtos.categories)
+  console.log(produtos)
   return (
     <>
       <main className="w-full">
