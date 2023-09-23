@@ -3,10 +3,12 @@ import { Package, X, Plus } from 'lucide-react'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { useEffect, useState } from 'react'
 import { getProductCategories } from '../../../../../sanity/sanity-utils'
+import Link from 'next/link'
 
 interface Icategories {
   title: string
   _id: string
+  slug: { current: string; _type: string }
 }
 
 export function ProductSubMenu() {
@@ -23,6 +25,7 @@ export function ProductSubMenu() {
 
     fetchCategories()
   }, [])
+  console.log(categories)
   const [open, setOpen] = useState(false)
   return (
     <Collapsible.Root open={open} onOpenChange={setOpen}>
@@ -48,14 +51,13 @@ export function ProductSubMenu() {
       <Collapsible.Content className="CollapsibleContent">
         {categories.map((category) => {
           return (
-            <div
-              key={category._id}
-              className="px-[22px] py-5 hover:bg-slate-200 cursor-pointer border-b border-[#1F2A68]"
-            >
-              <span className="font-roboto text-base text-[#1F2A68] font-medium leading-[20px]">
-                {category.title}
-              </span>
-            </div>
+            <Link key={category._id} href={`/produto/${category.slug.current}`}>
+              <div className="px-[22px] py-5 hover:bg-slate-200 cursor-pointer border-b border-[#1F2A68]">
+                <span className="font-roboto text-base text-[#1F2A68] font-medium leading-[20px]">
+                  {category.title}
+                </span>
+              </div>
+            </Link>
           )
         })}
       </Collapsible.Content>

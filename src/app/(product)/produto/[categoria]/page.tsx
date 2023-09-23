@@ -21,9 +21,6 @@ export default async function Product({ params }: Props) {
   const produtos = await getProductsByCategorySlug(category)
   const categoryTitle = await getCategoriesBySlug(category)
 
-  console.log(produtos)
-  console.log(categoryTitle + 'Category TITLE AQUI')
-
   return (
     <>
       <main className="w-full">
@@ -48,7 +45,9 @@ export default async function Product({ params }: Props) {
 
             {/* Exibindo ... máquinas */}
             <span className="text-[#9CA3AF] text-base leading-[24px] font-normal font-roboto">
-              Exibindo <strong className="text-black">06</strong> máquinas
+              Exibindo{' '}
+              <strong className="text-black">0{produtos.length}</strong>{' '}
+              máquinas
             </span>
 
             {/* Div com os Cards */}
