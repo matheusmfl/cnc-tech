@@ -1,7 +1,9 @@
 // Items do menu
-import { Package, Settings, UserSquare2, Info } from 'lucide-react'
-import iconMore from '../../../assets/iconMore.svg'
-import Image from 'next/image'
+'use client'
+import { Package, Settings, UserSquare2, Info, X, Plus } from 'lucide-react'
+import * as Collapsible from '@radix-ui/react-collapsible'
+import { useState } from 'react'
+import { ProductSubMenu } from './CollapsibleSubMenus/Product'
 
 interface MenuItems {
   icon: 'package' | 'settings' | 'contact' | 'info'
@@ -9,23 +11,28 @@ interface MenuItems {
 }
 
 export function MenuItem({ icon, title }: MenuItems) {
+  const [open, setOpen] = useState(false)
   return (
-    <div className="border-b border-solid text-gray-700 border-slate-400 flex py-4 px-5 items-center justify-between bg-slate-100">
-      <div className="flex gap-[22px]">
-        {icon === 'package' && <Package />}
-        {icon === 'contact' && <UserSquare2 />}
-        {icon === 'info' && <Info />}
-        {icon === 'settings' && <Settings />}
-        <span>{title}</span>
+    <Collapsible.Root open={open} onOpenChange={setOpen}>
+      <div className="border-b border-solid text-gray-700 border-slate-400 flex py-4 px-5 items-center justify-between bg-slate-100">
+        <div className="flex gap-[22px]">
+          {icon === 'package' && <Package />}
+          {icon === 'contact' && <UserSquare2 />}
+          {icon === 'info' && <Info />}
+          {icon === 'settings' && <Settings />}
+          <span>{title}</span>
+        </div>
+        <Collapsible.Trigger asChild>
+          <button>{open ? <X size={20} /> : <Plus size={20} />}</button>
+        </Collapsible.Trigger>
       </div>
-      <button>
-        <Image
-          src={iconMore}
-          alt="Icone que desce o menu"
-          width={24}
-          height={24}
-        />
-      </button>
-    </div>
+      <Collapsible.Content className="CollapsibleContent">
+        {/* @ts-expect-error */}
+        <ProductSubMenu />
+        <MenuItem title="Serviços" icon="settings" />
+        <MenuItem title="Contato" icon="contact" />
+        <MenuItem title="Sobre" icon="info" />
+      </Collapsible.Content>
+    </Collapsible.Root>
   )
 }

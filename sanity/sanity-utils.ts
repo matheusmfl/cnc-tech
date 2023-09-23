@@ -17,11 +17,38 @@ export async function getCategories(): Promise<Category[]> {
   }
 }
 
-export async function fetchProdutos() {
+export async function getProductCategories() {
   const client = createClient(clientConfig)
   try {
     // Consulta para buscar todos os documentos do tipo 'produto'
-    const query = `*[_type == 'produto']`
+    const query = `*[_type == 'productCategory']`
+
+    // Execute a consulta
+    const categorias = await client.fetch(query)
+
+    // Faça o que você deseja com os produtos, por exemplo, imprimir no console
+
+    // Retorne os produtos para uso posterior
+    return categorias
+  } catch (error) {
+    console.error('Erro ao buscar produtos:', error)
+    throw error
+  }
+}
+export async function fetchProductPage() {
+  const client = createClient(clientConfig)
+  try {
+    // Consulta para buscar todos os documentos do tipo 'produto'
+    const query = `*[_type == 'produto']{
+      _id,
+      title,
+      productCategory[]->{  // Obtenha o nome da categoria de referência
+        _id,
+        title
+      },
+      'image': image.asset->url,
+      body
+    }`
 
     // Execute a consulta
     const produtos = await client.fetch(query)

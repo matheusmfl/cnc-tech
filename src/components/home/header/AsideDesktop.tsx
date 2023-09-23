@@ -1,5 +1,6 @@
 import { Search } from 'lucide-react'
 import { MenuItem } from './MenuItem'
+import { ProductSubMenu } from './CollapsibleSubMenus/Product'
 
 export function AsideDesktop() {
   return (
@@ -12,7 +13,8 @@ export function AsideDesktop() {
         </span>
       </div>
       <div className="flex flex-col bg-slate-100 h-screen">
-        <MenuItem title="Produtos" icon="package" />
+        {/* @ts-expect-error */}
+        <ProductSubMenu />
         <MenuItem title="Serviços" icon="settings" />
         <MenuItem title="Contato" icon="contact" />
         <MenuItem title="Sobre" icon="info" />
