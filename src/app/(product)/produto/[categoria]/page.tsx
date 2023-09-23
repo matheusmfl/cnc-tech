@@ -3,7 +3,10 @@ import { AsideDesktop } from '@/components/home/header/AsideDesktop'
 import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 import { ProductCard } from '@/components/product/ProductCard'
-import { getProductsByCategorySlug } from '../../../../../sanity/sanity-utils'
+import {
+  getCategoriesBySlug,
+  getProductsByCategorySlug,
+} from '../../../../../sanity/sanity-utils'
 
 type Props = {
   params: { categoria: string }
@@ -11,8 +14,10 @@ type Props = {
 export default async function Product({ params }: Props) {
   const category = params.categoria
   const produtos = await getProductsByCategorySlug(category)
+  const categoryTitle = await getCategoriesBySlug(category)
 
   console.log(produtos)
+  console.log(categoryTitle + 'Category TITLE AQUI')
 
   return (
     <>

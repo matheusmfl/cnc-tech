@@ -36,6 +36,26 @@ export async function getProductCategories() {
   }
 }
 
+export async function getCategoriesBySlug(categorySlug: string) {
+  const client = createClient(clientConfig)
+
+  try {
+    const categoryQuery = `*[_type == 'productCategory' && slug.current == $categorySlug]`
+
+    // Execute a consulta para obter a categoria
+    const category = await client.fetch(categoryQuery, { categorySlug })
+
+    if (!category || category.length === 0) {
+      throw new Error('Categoria não encontrada')
+    }
+
+    return category[0].title // Retorna o título da categoria encontrada
+  } catch (error) {
+    console.error('Erro ao buscar categoria:', error)
+    throw error // Você pode optar por relançar o erro para que ele seja tratado onde a função for chamada.
+  }
+}
+
 export async function getProductsByCategorySlug(categorySlug: string) {
   const client = createClient(clientConfig)
   try {
