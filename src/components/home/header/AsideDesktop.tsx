@@ -13,7 +13,6 @@ export function AsideDesktop() {
         </span>
       </div>
       <div className="flex flex-col bg-slate-100 h-screen">
-        {/* @ts-expect-error */}
         <ProductSubMenu />
         <MenuItem title="Serviços" icon="settings" />
         <MenuItem title="Contato" icon="contact" />
