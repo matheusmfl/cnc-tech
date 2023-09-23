@@ -27,7 +27,6 @@ export function MenuItem({ icon, title }: MenuItems) {
         </Collapsible.Trigger>
       </div>
       <Collapsible.Content className="CollapsibleContent">
-        {/* @ts-expect-error */}
         <ProductSubMenu />
         <MenuItem title="Serviços" icon="settings" />
         <MenuItem title="Contato" icon="contact" />
