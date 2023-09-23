@@ -1,3 +1,4 @@
+import { Footer } from '@/components/home/footer/Footer'
 import { AsideDesktop } from '@/components/home/header/AsideDesktop'
 import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
@@ -41,6 +42,7 @@ export default function Product() {
               <ProductCard name="MSZ600AC" />
             </div>
           </div>
+          <Footer />
         </section>
       </main>
     </>
