@@ -35,31 +35,28 @@ export async function getProductCategories() {
     throw error
   }
 }
-export async function fetchProductPage() {
+
+export async function getProductsByCategory(categorySlug: string) {
   const client = createClient(clientConfig)
-  try {
-    // Consulta para buscar todos os documentos do tipo 'produto'
-    const query = `*[_type == 'produto']{
+
+  const query = groq`
+    *[_type == "produto" && references(*[_type == "productCategory" && slug.current == $categorySlug]._id)] {
       _id,
       title,
-      productCategory[]->{  // Obtenha o nome da categoria de referência
-        _id,
-        title
-      },
-      'image': image.asset->url,
-      body
-    }`
+      slug,
+      image,
+      body,
+      specifications
+    }
+  `
 
-    // Execute a consulta
-    const produtos = await client.fetch(query)
-
-    // Faça o que você deseja com os produtos, por exemplo, imprimir no console
-
-    // Retorne os produtos para uso posterior
-    return produtos
+  const params = { categorySlug }
+  try {
+    const products = await client.fetch(query, params)
+    return products
   } catch (error) {
     console.error('Erro ao buscar produtos:', error)
-    throw error
+    return []
   }
 }
 

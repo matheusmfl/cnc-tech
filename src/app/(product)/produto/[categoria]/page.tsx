@@ -3,10 +3,13 @@ import { AsideDesktop } from '@/components/home/header/AsideDesktop'
 import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 import { ProductCard } from '@/components/product/ProductCard'
-import { getProductCategories } from '../../../../../sanity/sanity-utils'
+import { getProductsByCategory } from '../../../../../sanity/sanity-utils'
 
-export default async function Product() {
-  const produtos = await getProductCategories()
+interface Params {
+  category: string
+}
+export default async function Product({ category }: Params) {
+  const produtos = await getProductsByCategory(category)
 
   console.log(produtos)
   return (

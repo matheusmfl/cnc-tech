@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { MenuItem } from './MenuItem'
 import Link from 'next/link'
+import { ProductSubMenu } from './CollapsibleSubMenus/Product'
 
 export function CollapsibleComponent() {
   const [open, setOpen] = useState(false)
@@ -22,7 +23,7 @@ export function CollapsibleComponent() {
         </Collapsible.Trigger>
       </header>
       <Collapsible.Content className="CollapsibleContent">
-        <MenuItem title="Produtos" icon="package" />
+        <ProductSubMenu />
         <MenuItem title="Serviços" icon="settings" />
         <MenuItem title="Contato" icon="contact" />
         <MenuItem title="Sobre" icon="info" />
