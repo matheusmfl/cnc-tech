@@ -17,6 +17,25 @@ export async function getCategories(): Promise<Category[]> {
   }
 }
 
+export async function fetchProdutos() {
+  const client = createClient(clientConfig)
+  try {
+    // Consulta para buscar todos os documentos do tipo 'produto'
+    const query = `*[_type == 'produto']`
+
+    // Execute a consulta
+    const produtos = await client.fetch(query)
+
+    // Faça o que você deseja com os produtos, por exemplo, imprimir no console
+
+    // Retorne os produtos para uso posterior
+    return produtos
+  } catch (error) {
+    console.error('Erro ao buscar produtos:', error)
+    throw error
+  }
+}
+
 export async function getPostsFeed(page?: number): Promise<Posts[]> {
   const client = createClient(clientConfig)
 

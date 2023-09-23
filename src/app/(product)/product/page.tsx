@@ -3,8 +3,12 @@ import { AsideDesktop } from '@/components/home/header/AsideDesktop'
 import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 import { ProductCard } from '@/components/product/ProductCard'
+import { fetchProdutos } from '../../../../sanity/sanity-utils'
 
-export default function Product() {
+export default async function Product() {
+  const produtos = await fetchProdutos()
+
+  console.log(produtos.categories)
   return (
     <>
       <main className="w-full">
