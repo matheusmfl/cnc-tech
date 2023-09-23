@@ -11,6 +11,11 @@ import {
 type Props = {
   params: { categoria: string }
 }
+
+interface IProdutos {
+  title: string
+  imageUrl: string
+}
 export default async function Product({ params }: Props) {
   const category = params.categoria
   const produtos = await getProductsByCategorySlug(category)
@@ -35,7 +40,7 @@ export default async function Product({ params }: Props) {
           {/* Container Geral */}
           <div className="px-6 py-8 md:px-20 md:py-10 flex flex-col gap-5">
             <h2 className="font-roboto font-medium text-[#1F2A68] leading-[24px] text-lg md:text-[24px]">
-              Centro de furação
+              {categoryTitle}
             </h2>
             {/* divisor */}
 
@@ -48,12 +53,16 @@ export default async function Product({ params }: Props) {
 
             {/* Div com os Cards */}
             <div className="flex flex-col items-center md:grid md:grid-cols-3 gap-5 py-5">
-              <ProductCard name="MSZ600AC" />
-              <ProductCard name="MSZ600AC" />
-              <ProductCard name="MSZ600AC" />
-              <ProductCard name="MSZ600AC" />
-              <ProductCard name="MSZ600AC" />
-              <ProductCard name="MSZ600AC" />
+              {/* <ProductCard name="MSZ600AC" /> */}
+              {produtos.map((produto: IProdutos, i: number) => {
+                return (
+                  <ProductCard
+                    key={i}
+                    name={produto.title}
+                    imgUrl={produto.imageUrl}
+                  />
+                )
+              })}
             </div>
           </div>
           <Footer />

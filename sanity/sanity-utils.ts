@@ -70,7 +70,10 @@ export async function getProductsByCategorySlug(categorySlug: string) {
     }
 
     // Consulta GROQ para obter produtos relacionados à categoria
-    const productsQuery = `*[_type == 'produto' && references($category)]`
+    const productsQuery = `*[_type == 'produto' && references($category)] {
+      title,
+      "imageUrl": image.asset->url
+    }`
 
     // Execute a consulta para obter os produtos relacionados à categoria
     const products = await client.fetch(productsQuery, {

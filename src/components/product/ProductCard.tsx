@@ -1,19 +1,20 @@
 import Image from 'next/image'
-import genericImg from '../../assets/productImage.png'
 
 interface ProductProps {
   name: string
-  img?: string
+  imgUrl: string
 }
 
-export function ProductCard({ name, img }: ProductProps) {
+export function ProductCard({ name, imgUrl }: ProductProps) {
   return (
     <div className="flex flex-col shadow-lg rounded-lg w-full md:w-[200px]">
       {/* Card com imagem */}
       <div className="bg-slate-200 px-5 py-5 rounded-t-lg">
         <Image
-          src={genericImg}
+          src={imgUrl}
           alt="img do produto"
+          width={256}
+          height={256}
           className="rounded-t-lg object-cover md:h-[186px]  md:object-contain"
         />
       </div>
