@@ -36,23 +36,27 @@ export async function getProductCategories() {
   }
 }
 
-export async function getProductsByCategory(categorySlug: string) {
+export async function getProductsByCategorySlug(categorySlug: string) {
   const client = createClient(clientConfig)
-
-  const query = groq`
-    *[_type == "produto" && references(*[_type == "productCategory" && slug.current == $categorySlug]._id)] {
-      _id,
-      title,
-      slug,
-      image,
-      body,
-      specifications
-    }
-  `
-
-  const params = { categorySlug }
   try {
-    const products = await client.fetch(query, params)
+    // Consulta GROQ para obter a categoria de produto com base no slug
+    const categoryQuery = `*[_type == 'productCategory' && slug.current == $categorySlug]`
+
+    // Execute a consulta para obter a categoria
+    const [category] = await client.fetch(categoryQuery, { categorySlug })
+
+    if (!category) {
+      throw new Error('Categoria não encontrada')
+    }
+
+    // Consulta GROQ para obter produtos relacionados à categoria
+    const productsQuery = `*[_type == 'produto' && references($category)]`
+
+    // Execute a consulta para obter os produtos relacionados à categoria
+    const products = await client.fetch(productsQuery, {
+      category: category._id,
+    })
+
     return products
   } catch (error) {
     console.error('Erro ao buscar produtos:', error)
