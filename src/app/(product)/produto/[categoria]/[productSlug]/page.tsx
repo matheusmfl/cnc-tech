@@ -20,7 +20,6 @@ export default async function ProductPage({ params }: Props) {
   const categoryTitle = await getCategoriesBySlug(category)
   const product = await getProductBySlug(slug)
 
-  console.log(product)
   return (
     <>
       <main className="w-full">
@@ -35,7 +34,7 @@ export default async function ProductPage({ params }: Props) {
           <DesktopLogo />
 
           {/* Container Geral */}
-          <div className="flex flex-col">
+          <div className="flex flex-col bg-slate-100">
             {/* div navegação */}
             <div className="px-10 py-[10px] bg-slate-100">
               <span className="font-roboto text-base font-normal text-[#075985] ">

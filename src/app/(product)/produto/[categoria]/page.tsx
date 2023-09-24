@@ -7,6 +7,7 @@ import {
   getCategoriesBySlug,
   getProductsByCategorySlug,
 } from '../../../../../sanity/sanity-utils'
+import Link from 'next/link'
 
 type Props = {
   params: { categoria: string }
@@ -15,11 +16,15 @@ type Props = {
 interface IProdutos {
   title: string
   imageUrl: string
+  slug: {
+    current: string
+  }
 }
 export default async function Product({ params }: Props) {
   const category = params.categoria
   const produtos = await getProductsByCategorySlug(category)
   const categoryTitle = await getCategoriesBySlug(category)
+  console.log(produtos)
 
   return (
     <>
@@ -55,11 +60,16 @@ export default async function Product({ params }: Props) {
               {/* <ProductCard name="MSZ600AC" /> */}
               {produtos.map((produto: IProdutos, i: number) => {
                 return (
-                  <ProductCard
+                  <Link
+                    href={`/produto/${category}/${produto.slug.current}`}
+                    className="cursor-pointer"
                     key={i}
-                    name={produto.title}
-                    imgUrl={produto.imageUrl}
-                  />
+                  >
+                    <ProductCard
+                      name={produto.title}
+                      imgUrl={produto.imageUrl}
+                    />
+                  </Link>
                 )
               })}
             </div>

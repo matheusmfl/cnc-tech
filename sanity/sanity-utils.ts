@@ -72,7 +72,8 @@ export async function getProductsByCategorySlug(categorySlug: string) {
     // Consulta GROQ para obter produtos relacionados à categoria
     const productsQuery = `*[_type == 'produto' && references($category)] {
       title,
-      "imageUrl": image.asset->url
+      "imageUrl": image.asset->url,
+      slug
     }`
 
     // Execute a consulta para obter os produtos relacionados à categoria
