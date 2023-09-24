@@ -3,11 +3,13 @@ import { AsideDesktop } from '@/components/home/header/AsideDesktop'
 import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 import Image from 'next/image'
-import genericImg from '../../../../../assets/ProductImgGeneric.jpeg'
 import {
+  builder,
   getCategoriesBySlug,
   getProductBySlug,
 } from '../../../../../../sanity/sanity-utils'
+import { PortableText } from '@portabletext/react'
+import Link from 'next/link'
 
 type Props = {
   params: { categoria: string; productSlug: string }
@@ -37,13 +39,17 @@ export default async function ProductPage({ params }: Props) {
             {/* div navegação */}
             <div className="px-10 py-[10px] bg-slate-100">
               <span className="font-roboto text-base font-normal text-[#075985] ">
-                Home &gt; {categoryTitle} &gt; Centro de furação
+                <Link href={'/'}>Home &gt;</Link>{' '}
+                <Link href={`/produto/${category}`}>{categoryTitle} &gt; </Link>
+                {product.title}
               </span>
             </div>
             {/* Div com imagem do produto */}
             <div className="w-full md:h-[440px] overflow-hidden">
               <Image
-                src={genericImg}
+                src={product.imageUrl}
+                width={800}
+                height={800}
                 alt="Imagem do produto"
                 className="object-cover"
               />
@@ -55,11 +61,11 @@ export default async function ProductPage({ params }: Props) {
               {/* Container Specifications */}
               <div className="flex flex-col gap-5">
                 <span className="font-roboto text-lg font-normal leading-[28px] text-[#334155] ">
-                  Categoria: Centro de furação
+                  Categoria: {categoryTitle}
                 </span>
 
                 <h2 className="font-roboto text-slate-900 text-3xl font-medium leading-[44px] ">
-                  Modelo: MSZ600AC
+                  Modelo: {product.title}
                 </h2>
 
                 {/* divisor */}
@@ -68,22 +74,80 @@ export default async function ProductPage({ params }: Props) {
                 {/* Div contendo texto Body */}
 
                 <div className="py-5">
-                  <span>
-                    Centro de furação CNC para indústria Fácil operação,
-                    treinamento simples e sem necessidade de operador
-                    especializado Essa série de centro de furação possui três
-                    cabeçotes potentes o que resulta em 40% maior produtividade
-                    do que as máquinas convencionais Trabalha seis lados da peça
-                    em um só processo, adequada para alta produção A alta
-                    precisão melhora a consistência da montagem das peças
-                    Equipada com dispositivo de detecção de tamanho do painel,
-                    que evita danos causados por erro de etiquetagem Equipada
-                    com leitor de código de barra para selecionar programas
-                    automaticamente. Esta máquina pode ser introduzida em uma
-                    linha de produção, na qual as peças podem sair diretamente
-                    da coladeira de bordas através de esteiras de alimentação
-                    automática para o processo de furação.
-                  </span>
+                  <PortableText
+                    value={product.body}
+                    components={{
+                      block: {
+                        h1: ({ children }) => (
+                          <h1 className="text-3xl text-slate-900 font-bold leading-9 pb-2">
+                            {children}
+                          </h1>
+                        ),
+                        h2: ({ children }) => (
+                          <h2 className="text-2xl text-slate-900 font-bold leading-8 pb-2">
+                            {children}
+                          </h2>
+                        ),
+                        h3: ({ children }) => (
+                          <h3 className="text-xl text-slate-900 font-bold leading-6 pb-2">
+                            {children}
+                          </h3>
+                        ),
+
+                        h4: ({ children }) => (
+                          <h4 className="text-lg text-slate-900 font-bold leading-6 pb-2">
+                            {children}
+                          </h4>
+                        ),
+                        normal: ({ children }) => (
+                          <p className="text-base text-slate-900 font-normal leading-6 pb-2">
+                            {children}
+                          </p>
+                        ),
+                      },
+                      listItem: {
+                        number: ({ children }) => (
+                          <li style={{ listStyleType: 'decimal' }}>
+                            {children}
+                          </li>
+                        ),
+                        bullet: ({ children }) => (
+                          <li
+                            style={{
+                              listStyleType: 'disc',
+                              marginLeft: '16px',
+                            }}
+                          >
+                            {children}
+                          </li>
+                        ),
+                      },
+                      marks: {
+                        link: ({ value, children }) => (
+                          <a
+                            href={`${value.href}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sky-600 hover:underline"
+                          >
+                            {children}
+                          </a>
+                        ),
+                      },
+                      types: {
+                        image: ({ value }) => (
+                          <div className="text-4xl pb-2">
+                            <Image
+                              src={builder.image(value).toString()}
+                              alt={value.alt}
+                              width={1000}
+                              height={1000}
+                            />
+                          </div>
+                        ),
+                      },
+                    }}
+                  />
 
                   {/* Div CTA */}
 
