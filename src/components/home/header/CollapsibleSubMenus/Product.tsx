@@ -14,6 +14,7 @@ interface Icategories {
 export function ProductSubMenu() {
   const [categories, setCategories] = useState<Icategories[]>([])
   useEffect(() => {
+    console.log('entrou')
     async function fetchCategories() {
       try {
         const categorys = await getProductCategories()

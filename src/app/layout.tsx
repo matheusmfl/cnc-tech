@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import '../globals.css'
+import './globals.css'
 import { Roboto } from 'next/font/google'
 
 const roboto = Roboto({
@@ -9,15 +9,15 @@ const roboto = Roboto({
 
 export const metadata = {
   title: 'CNC-TECH',
-  description: 'em desenvolvimento...',
+  description: 'em desenvolvimento..',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <main>
-        <body className={`${roboto.className}`}>{children}</body>
-      </main>
+      <body className={roboto.className}>
+        <main className="">{children}</main>
+      </body>
     </html>
   )
 }
