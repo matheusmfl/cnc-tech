@@ -87,6 +87,35 @@ export async function getProductsByCategorySlug(categorySlug: string) {
   }
 }
 
+export async function getProductBySlug(slug: string) {
+  const client = createClient(clientConfig)
+  try {
+    // Consulta GROQ para buscar o produto com base no slug
+    const query = `
+    *[_type == 'produto' && slug.current == $slug][0] {
+      title,
+      "imageUrl": image.asset->url,
+      specifications,
+      slug,
+      productCategory,
+      body
+    }
+  `
+
+    // Execute a consulta para buscar o produto
+    const product = await client.fetch(query, { slug })
+
+    if (!product) {
+      throw new Error('Produto não encontrado')
+    }
+
+    return product
+  } catch (error) {
+    console.error('Erro ao buscar o produto:', error)
+    throw error // Você pode optar por relançar o erro para que ele seja tratado onde a função for chamada.
+  }
+}
+
 export async function getPostsFeed(page?: number): Promise<Posts[]> {
   const client = createClient(clientConfig)
 
