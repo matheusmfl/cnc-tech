@@ -11,7 +11,7 @@ export const metadata = {
   title: 'CNC-TECH',
   description: 'em desenvolvimento..',
 }
-
+export const revalidate = 3600
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
