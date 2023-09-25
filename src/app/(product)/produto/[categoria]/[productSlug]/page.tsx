@@ -19,6 +19,8 @@ export default async function ProductPage({ params }: Props) {
   const slug = params.productSlug
   const categoryTitle = await getCategoriesBySlug(category)
   const product = await getProductBySlug(slug)
+  const productSpecifications = product.specifications
+  console.log(product.specifications)
 
   return (
     <>
@@ -147,6 +149,52 @@ export default async function ProductPage({ params }: Props) {
                       },
                     }}
                   />
+
+                  {/* Div specifications */}
+
+                  {productSpecifications.length > 0 && (
+                    <div className="flex flex-col gap-[10px]">
+                      <span className="font-roboto text-xl font-medium leading-[28px] text-slate-900">
+                        Informações técnicas:
+                      </span>
+                      {/* Container que simula a Tabela */}
+                      <div className="w-full flex flex-col shadow-2xl">
+                        {productSpecifications.map(
+                          (specification: any, index: number) => {
+                            // Verifique se o índice é par ou ímpar
+                            const isEven = index % 2 === 0
+
+                            // Defina classes CSS com base no resultado da verificação
+                            const rowClasses = isEven
+                              ? 'bg-gray-100' // Cor para índices pares
+                              : 'bg-gray-200' // Cor para índices ímpares
+                            return (
+                              // Container Contendo a chave e valor
+                              <div
+                                key={specification._key}
+                                className="grid grid-cols-2 "
+                              >
+                                <div
+                                  className={`p-[10px] h-[48px] border-l-2 border-gray-400 ${rowClasses}`}
+                                >
+                                  <span className="font-roboto text-lg font-normal leading-[28px] text-slate-800">
+                                    {specification.key}
+                                  </span>
+                                </div>
+                                <div
+                                  className={`p-[10px] h-[48px] border-l-2 border-gray-400 ${rowClasses}`}
+                                >
+                                  <span className="font-roboto text-lg font-normal leading-[28px] text-slate-800">
+                                    {specification.value}
+                                  </span>
+                                </div>
+                              </div>
+                            )
+                          },
+                        )}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Div CTA */}
 

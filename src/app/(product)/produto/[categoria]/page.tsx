@@ -24,7 +24,6 @@ export default async function Product({ params }: Props) {
   const category = params.categoria
   const produtos = await getProductsByCategorySlug(category)
   const categoryTitle = await getCategoriesBySlug(category)
-  console.log(produtos)
 
   return (
     <>
