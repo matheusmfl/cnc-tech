@@ -4,7 +4,7 @@ import { ProductSubMenu } from './CollapsibleSubMenus/Product'
 
 export function AsideDesktop() {
   return (
-    <aside className="hidden md:flex md:flex-col  w-[320px] border-r-[1px] border-[#1F2A68] ">
+    <aside className="hidden md:flex md:flex-col bg-slate-100  w-[320px] border-r-[1px] border-[#1F2A68] overflow-y-auto ">
       {/* Search div */}{' '}
       <div className="grid grid-cols-2">
         {/* HomeNav Div */}

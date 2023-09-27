@@ -34,7 +34,7 @@ export function ProductSubMenu() {
         className={`border-b border-solid 
         ${open ? 'text-white' : 'text-[#1F2A68]'}
         border-[#1F2A68] flex py-4 px-5 items-center justify-between 
-        ${open ? 'bg-[#1F2A68]' : 'bg-slate-100'}`}
+        ${open ? 'bg-[#1F2A68]' : 'bg-slate-100'} `}
       >
         <div className="flex gap-[22px]">
           <Package />
@@ -49,18 +49,23 @@ export function ProductSubMenu() {
           <button>{open ? <X size={20} /> : <Plus size={20} />}</button>
         </Collapsible.Trigger>
       </div>
-      <Collapsible.Content className="CollapsibleContent">
-        {categories.map((category) => {
-          return (
-            <Link key={category._id} href={`/produto/${category.slug.current}`}>
-              <div className="px-[22px] py-5 hover:bg-slate-200 cursor-pointer border-b border-[#1F2A68]">
-                <span className="font-roboto text-base text-[#1F2A68] font-medium leading-[20px]">
-                  {category.title}
-                </span>
-              </div>
-            </Link>
-          )
-        })}
+      <Collapsible.Content className="CollapsibleContent overflow-auto">
+        <div className="overflow-y-auto">
+          {categories.map((category) => {
+            return (
+              <Link
+                key={category._id}
+                href={`/produto/${category.slug.current}`}
+              >
+                <div className="px-[22px] py-5 hover:bg-slate-200 cursor-pointer border-b border-[#1F2A68]">
+                  <span className="font-roboto text-base text-[#1F2A68] font-medium leading-[20px]">
+                    {category.title}
+                  </span>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
       </Collapsible.Content>
     </Collapsible.Root>
   )
