@@ -3,7 +3,6 @@
 import { Package, Settings, UserSquare2, Info, X, Plus } from 'lucide-react'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { useState } from 'react'
-import { ProductSubMenu } from './CollapsibleSubMenus/Product'
 
 interface MenuItems {
   icon: 'package' | 'settings' | 'contact' | 'info'
@@ -26,12 +25,7 @@ export function MenuItem({ icon, title }: MenuItems) {
           <button>{open ? <X size={20} /> : <Plus size={20} />}</button>
         </Collapsible.Trigger>
       </div>
-      <Collapsible.Content className="CollapsibleContent">
-        <ProductSubMenu />
-        <MenuItem title="Serviços" icon="settings" />
-        <MenuItem title="Contato" icon="contact" />
-        <MenuItem title="Sobre" icon="info" />
-      </Collapsible.Content>
+      <Collapsible.Content className="CollapsibleContent"></Collapsible.Content>
     </Collapsible.Root>
   )
 }
