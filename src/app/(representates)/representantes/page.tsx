@@ -16,8 +16,7 @@ export default function Representantes() {
         <div className="py-10 px-6 flex flex-col gap-6 bg-[#1F2A68]">
           <h1 className="font-roboto text-3xl font-medium leading-[36px] text-[#F8FAFC] ">
             <strong>Disponha</strong> da ajuda de nossos{' '}
-            <strong>representantes</strong>
-            nacionais e internacionais
+            <strong>representantes</strong> nacionais e internacionais
           </h1>
 
           {/* divisor */}
@@ -37,6 +36,51 @@ export default function Representantes() {
             <div className="flex flex-col gap-[10px]">
               <span className="font-roboto text-sm font-normal text-gray-700">
                 Selecionar
+              </span>
+              <select
+                name="cars"
+                id="cars"
+                className="px-4 py-4 appearance-none bg-white border border-gray-300 hover:border-gray-500 rounded-md pr-8 focus:outline-none focus:ring focus:border-blue-300"
+              >
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div>
+
+            {/* Div internacional */}
+            <div className="flex flex-col pt-20 gap-5">
+              <span className="font-roboto text-lg font-medium text-slate-800 leading-[24px]">
+                Sua empresa não está do Brasil?
+              </span>
+
+              <span className="font-roboto text-base font-normal text-slate-800 leading-[24px]">
+                A CNCTech tem representantes em diversos países
+              </span>
+
+              {/* div button */}
+              <div className="py-5">
+                <button className="py-4 bg-[#1F2A68] shadow-md font-roboto rounded-[4px] text-white font-medium text-base text-center w-full">
+                  Representantes internacionais
+                </button>
+              </div>
+            </div>
+
+            {/* last div */}
+            <div className="flex flex-col py-20 gap-5">
+              <h3 className="font-roboto text-base font-medium text-slate-800 leading-[24px]">
+                Problemas para encontrar um representante?
+              </h3>
+
+              <span className="font-roboto text-base font-normal text-slate-800 leading-[24px]">
+                Clique no botão abaixo e fale com um de nossos atendentes
+              </span>
+
+              {/* link */}
+
+              <span className="font-roboto text-base font-bold cursor-pointer pt-5 text-[#1F2A68] leading-[24px] underline">
+                Fale com um atendente -&gt;{' '}
               </span>
             </div>
           </div>
