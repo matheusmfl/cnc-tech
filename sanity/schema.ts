@@ -7,6 +7,7 @@ import author from './schemas/author'
 import product from './schemas/product'
 import { Specification } from './schemas/specification'
 import productCategory from './schemas/productCategory'
+import { RepresentantesBrasil } from './schemas/representantesBrasil'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -17,5 +18,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     product,
     Specification,
     productCategory,
+    RepresentantesBrasil,
   ],
 }
