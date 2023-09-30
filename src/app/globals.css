@@ -5,28 +5,30 @@
 body {
   -webkit-font-smoothing: antialiased;
   -text-rendering: optimizeLegibility;  
-  ::-webkit-scrollbar {
-  width: 8px; /* Largura da barra de rolagem */
-
 }
 
-::-webkit-scrollbar-thumb {
-  background-color:#1F2A68; /* Cor do polegar da barra de rolagem */
+body::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+/* Estilizar o polegar da barra de rolagem */
+body::-webkit-scrollbar-thumb {
+  background-color: #1F2A68; /* Cor do polegar da barra de rolagem */
   border-radius: 4px; /* Raio da borda do polegar */
-  width: 8px;
   width: 100px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+/* Estilizar o polegar da barra de rolagem ao passar o mouse */
+body::-webkit-scrollbar-thumb:hover {
   background-color: darkblue; /* Cor do polegar da barra de rolagem ao passar o mouse */
 }
 
-/* Estilo para a barra de rolagem horizontal (opcional) */
-::-webkit-scrollbar-track {
+/* Estilizar a trilha (track) da barra de rolagem (opcional) */
+body::-webkit-scrollbar-track {
   background-color: lightgray; /* Cor de fundo da barra de rolagem */
-  width: 4px;
 }
-}
+
+
 
 .gratiantHero {
 background: linear-gradient(180deg, #053B59 0%, #04080B 100%);

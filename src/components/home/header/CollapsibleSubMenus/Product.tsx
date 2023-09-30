@@ -14,7 +14,6 @@ interface Icategories {
 export function ProductSubMenu() {
   const [categories, setCategories] = useState<Icategories[]>([])
   useEffect(() => {
-    console.log('entrou')
     async function fetchCategories() {
       try {
         const categorys = await getProductCategories()
@@ -26,7 +25,7 @@ export function ProductSubMenu() {
 
     fetchCategories()
   }, [])
-  console.log(categories)
+
   const [open, setOpen] = useState(false)
   return (
     <Collapsible.Root open={open} onOpenChange={setOpen}>
