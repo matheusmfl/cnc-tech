@@ -15,6 +15,7 @@ export default async function RepresentantesState({ params }: Props) {
   const StateParams = params.state.toUpperCase()
   const representantes = await getRepresentantesByState(StateParams)
   const stateName = siglaParaNomeEstado(StateParams)
+  console.log(representantes)
 
   return (
     <main>
@@ -41,8 +42,18 @@ export default async function RepresentantesState({ params }: Props) {
             Exibindo <strong> {representantes.length} </strong> representantes
             em {stateName}
           </span>
-          <RepresentanteCard />
-          <RepresentanteCard />
+          <div className="flex flex-col lg:grid lg:grid-cols-3 gap-3">
+            {representantes.map((representante: any) => {
+              return (
+                <RepresentanteCard
+                  key={representante._id}
+                  name={representante.name}
+                  imageUrl={representante.avatarUrl}
+                />
+              )
+            })}
+          </div>
+
           <div className="flex gap-1 items-center cursor-pointer">
             <Image src={arrow} alt="seta para voltar" />
             <span className="font-roboto text-base font-bold cursor-pointer text-gray-700 leading-[24px] underline">

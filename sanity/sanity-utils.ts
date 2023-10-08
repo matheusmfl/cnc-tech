@@ -21,7 +21,21 @@ export async function getRepresentantesByState(estado: string) {
   const client = createClient(clientConfig)
 
   try {
-    const query = `*[_type == 'representantesBrasil'  && state == $estado]`
+    const query = `*[_type == 'representantesBrasil'  && state == $estado]{
+      telephone,
+      "avatarUrl": avatar.asset->url, // Extrai a URL da imagem do campo "avatar"
+      _createdAt,
+      cellphone,
+      state,
+      email,
+      city,
+      _rev,
+      _type,
+      bio,
+      name,
+      _id,
+      _updatedAt
+    }`
 
     const resultado = await client.fetch(query, { estado })
     return resultado
