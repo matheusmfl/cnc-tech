@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { getStateRepresentantes } from '../../../sanity/sanity-utils'
+import Link from 'next/link'
 
 export function OptionsComponent() {
   const [states, setStates] = useState<string[] | null>(null)
@@ -15,6 +16,7 @@ export function OptionsComponent() {
   useEffect(() => {
     getStateRepresentantes().then((resultStates) => {
       setStates(resultStates as string[])
+      setSlug(resultStates[0] as string)
     })
   }, [])
   return (
@@ -38,9 +40,11 @@ export function OptionsComponent() {
           })}
       </select>
 
-      <button className="py-4 bg-[#1F2A68] mt-2 shadow-md font-roboto rounded-[4px] lg:w-[320px] text-white font-medium text-base text-center w-full">
-        Buscar representante
-      </button>
+      <Link href={`/representantes/${slug}`}>
+        <button className="py-4 bg-[#1F2A68] mt-2 shadow-md font-roboto rounded-[4px] lg:w-[320px] text-white font-medium text-base text-center w-full">
+          Buscar representante
+        </button>
+      </Link>
     </div>
   )
 }

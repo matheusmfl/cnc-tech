@@ -32,7 +32,8 @@ export async function getRepresentantesByState(estado: string) {
       _rev,
       _type,
       bio,
-      name,
+      title,
+      slug,
       _id,
       _updatedAt
     }`

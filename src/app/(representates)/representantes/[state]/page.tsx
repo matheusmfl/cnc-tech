@@ -7,6 +7,7 @@ import arrow from '@/assets/arrowBack.svg'
 import Image from 'next/image'
 import { getRepresentantesByState } from '../../../../../sanity/sanity-utils'
 import { siglaParaNomeEstado } from '@/utils/StateNameConvertion'
+import Link from 'next/link'
 
 type Props = {
   params: { representantes: string; state: string }
@@ -47,7 +48,7 @@ export default async function RepresentantesState({ params }: Props) {
               return (
                 <RepresentanteCard
                   key={representante._id}
-                  name={representante.name}
+                  name={representante.title}
                   imageUrl={representante.avatarUrl}
                 />
               )
@@ -56,9 +57,11 @@ export default async function RepresentantesState({ params }: Props) {
 
           <div className="flex gap-1 items-center cursor-pointer">
             <Image src={arrow} alt="seta para voltar" />
-            <span className="font-roboto text-base font-bold cursor-pointer text-gray-700 leading-[24px] underline">
-              Voltar
-            </span>
+            <Link href={'/representantes'}>
+              <span className="font-roboto text-base font-bold cursor-pointer text-gray-700 leading-[24px] underline">
+                Voltar
+              </span>
+            </Link>
           </div>
         </div>
 

@@ -6,9 +6,18 @@ export const RepresentantesBrasil = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'name',
+      name: 'title',
       title: 'Nome do representante',
       type: 'string',
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
     }),
     defineField({
       name: 'bio',
