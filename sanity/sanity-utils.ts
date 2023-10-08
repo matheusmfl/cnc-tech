@@ -17,6 +17,20 @@ export async function getCategories(): Promise<Category[]> {
   }
 }
 
+export async function getRepresentantesByState(estado: string) {
+  const client = createClient(clientConfig)
+
+  try {
+    const query = `*[_type == 'representantesBrasil'  && state == $estado]`
+
+    const resultado = await client.fetch(query, { estado })
+    return resultado
+  } catch (error) {
+    console.error('Error ao buscar representante')
+    throw error
+  }
+}
+
 export async function getStateRepresentantes() {
   const client = createClient(clientConfig)
   try {

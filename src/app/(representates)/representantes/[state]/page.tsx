@@ -5,8 +5,17 @@ import { Header } from '@/components/home/header/Header'
 import { RepresentanteCard } from '@/components/representantes/RepresentanteCard'
 import arrow from '@/assets/arrowBack.svg'
 import Image from 'next/image'
+import { getRepresentantesByState } from '../../../../../sanity/sanity-utils'
+import { siglaParaNomeEstado } from '@/utils/StateNameConvertion'
 
-export default function RepresentantesState() {
+type Props = {
+  params: { representantes: string; state: string }
+}
+export default async function RepresentantesState({ params }: Props) {
+  const StateParams = params.state.toUpperCase()
+  const representantes = await getRepresentantesByState(StateParams)
+  const stateName = siglaParaNomeEstado(StateParams)
+
   return (
     <main>
       <div className="md:fixed md:left-0 z-10">
@@ -29,7 +38,8 @@ export default function RepresentantesState() {
         {/* Segundo container */}
         <div className="px-6 py-10 lg:px-20 flex flex-col gap-6 bg-slate-50">
           <span className="font-roboto text-base font-medium leading-[20px] text-gray-700">
-            Exibindo 06 representantes em Rio Grande do Sul
+            Exibindo <strong> {representantes.length} </strong> representantes
+            em {stateName}
           </span>
           <RepresentanteCard />
           <RepresentanteCard />
