@@ -3,7 +3,9 @@ import { AsideDesktop } from '@/components/home/header/AsideDesktop'
 import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 
-export default function Representantes() {
+import { OptionsComponent } from '@/components/representantes/OptionsComponent'
+
+export default async function Representantes() {
   return (
     <main>
       <div className="md:fixed md:left-0 z-10">
@@ -13,7 +15,7 @@ export default function Representantes() {
       <div className="z-0 md:ml-[320px]">
         <DesktopLogo />
         {/* Div azul com H1 */}
-        <div className="py-10 px-6 flex flex-col gap-6 bg-[#1F2A68]">
+        <div className="py-10 px-6 lg:px-20 flex flex-col gap-6 bg-[#1F2A68]">
           <h1 className="font-roboto text-3xl font-medium leading-[36px] text-[#F8FAFC] ">
             <strong>Disponha</strong> da ajuda de nossos{' '}
             <strong>representantes</strong> nacionais e internacionais
@@ -24,7 +26,7 @@ export default function Representantes() {
         </div>
 
         {/* Segundo container */}
-        <div className="px-6 py-10 flex flex-col bg-slate-50">
+        <div className="px-6 py-10 lg:px-20 flex flex-col bg-slate-50">
           {/* Container Filho numero 1 */}
           <div className="pb-10 flex flex-col gap-10 ">
             <span className="font-roboto font-medium text-base leading-6 text-slate-800">
@@ -33,21 +35,7 @@ export default function Representantes() {
             </span>
 
             {/* Div com input */}
-            <div className="flex flex-col gap-[10px]">
-              <span className="font-roboto text-sm font-normal text-gray-700">
-                Selecionar
-              </span>
-              <select
-                name="cars"
-                id="cars"
-                className="px-4 py-4 appearance-none bg-white border border-gray-300 hover:border-gray-500 rounded-md pr-8 focus:outline-none focus:ring focus:border-blue-300"
-              >
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-              </select>
-            </div>
+            <OptionsComponent />
 
             {/* Div internacional */}
             <div className="flex flex-col pt-20 gap-5">
@@ -61,7 +49,7 @@ export default function Representantes() {
 
               {/* div button */}
               <div className="py-5">
-                <button className="py-4 bg-[#1F2A68] shadow-md font-roboto rounded-[4px] text-white font-medium text-base text-center w-full">
+                <button className="py-4 bg-[#1F2A68] shadow-md font-roboto rounded-[4px] lg:w-[320px] text-white font-medium text-base text-center w-full">
                   Representantes internacionais
                 </button>
               </div>

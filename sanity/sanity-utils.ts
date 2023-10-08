@@ -17,6 +17,25 @@ export async function getCategories(): Promise<Category[]> {
   }
 }
 
+export async function getStateRepresentantes() {
+  const client = createClient(clientConfig)
+  try {
+    const query = `*[_type == 'representantesBrasil']{
+      state
+    }`
+
+    const representantes = await client.fetch(query)
+
+    // Extrair estados únicos da lista de representantes
+    const estados = [...new Set(representantes.map((rep: any) => rep.state))]
+
+    return estados
+  } catch (error) {
+    console.error('Erro ao buscar estados dos representaantes:', error)
+    throw error
+  }
+}
+
 export async function getProductCategories() {
   const client = createClient(clientConfig)
   try {
