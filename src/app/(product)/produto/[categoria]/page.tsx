@@ -55,7 +55,7 @@ export default async function Product({ params }: Props) {
             </span>
 
             {/* Div com os Cards */}
-            <div className="flex flex-col items-center md:grid md:grid-cols-3 gap-5 py-5">
+            <div className="flex flex-col items-center md:grid md:grid-cols-3 gap-5 py-5 ">
               {/* <ProductCard name="MSZ600AC" /> */}
               {produtos.map((produto: IProdutos, i: number) => {
                 return (

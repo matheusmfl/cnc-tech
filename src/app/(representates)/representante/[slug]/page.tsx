@@ -4,10 +4,23 @@ import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 import arrow from '@/assets/arrowBack.svg'
 import Image from 'next/image'
-import avatar from '@/assets/atendimento.png'
 import Link from 'next/link'
+import { getRepresentanteBySlug } from '../../../../../sanity/sanity-utils'
 
-export default async function pageBySlug() {
+type Props = {
+  params: { representantes: string; slug: string }
+}
+export default async function pageBySlug({ params }: Props) {
+  const fetch = await getRepresentanteBySlug(params.slug)
+  const representante = fetch[0]
+  const email = representante.email
+  const telephone = representante.telephone
+  const cellphone = representante.cellphone
+  const city = representante.city
+  const name = representante.title
+  const bio = representante.bio
+  const avatar = representante.avatarUrl
+  console.log(representante)
   return (
     <main>
       <div className="md:fixed md:left-0 z-10">
@@ -34,10 +47,12 @@ export default async function pageBySlug() {
             <Image
               src={avatar}
               alt="avatar"
+              width={400}
+              height={400}
               className="rounded-full shadow-md border border-white w-[80px] h-[80px] object-cover"
             />
             <h1 className="font-roboto text-3xl font-medium leading-[36px] text-[#F8FAFC] ">
-              Matheus Fonteles
+              {name}
             </h1>
 
             {/* divisor */}
@@ -50,16 +65,27 @@ export default async function pageBySlug() {
           {/* Container Filho numero 1 */}
           <div className="pb-10 flex flex-col gap-6 ">
             <span className="font-roboto font-medium text-base leading-6 text-slate-800">
-              Sou representante de vendas da CNCTech a 5 anos e ajudarei a
-              encontrar a melhor solução para o seu negócio.
+              {bio}
             </span>
 
-            <span className="font-roboto font-medium text-base leading-6 text-slate-800">
-              <strong>E-mail: </strong> matheusfonteles@hotmail.com
-            </span>
-            <span className="font-roboto font-medium text-base leading-6 text-slate-800">
-              <strong>Telefone: </strong> 051 9-9999-9999
-            </span>
+            {email && (
+              <span className="font-roboto font-medium text-base leading-6 text-slate-800">
+                <strong>E-mail: </strong> {email}
+              </span>
+            )}
+
+            {telephone && (
+              <span className="font-roboto font-medium text-base leading-6 text-slate-800">
+                <strong>Telefone fixo: </strong> {telephone}
+              </span>
+            )}
+
+            {cellphone && (
+              <span className="font-roboto font-medium text-base leading-6 text-slate-800">
+                <strong>Telefone celular: </strong> {cellphone}
+              </span>
+            )}
+
             <span className="font-roboto font-medium text-base leading-6 text-slate-800">
               <strong>Horário de atendimento: </strong> Segunda à sexta das 9h
               às 18h

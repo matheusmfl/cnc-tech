@@ -17,6 +17,31 @@ export async function getCategories(): Promise<Category[]> {
   }
 }
 
+export async function getRepresentanteBySlug(slug: string) {
+  const client = createClient(clientConfig)
+
+  try {
+    const query = `*[_type == 'representantesBrasil'  && slug.current == $slug]{
+      telephone,
+      "avatarUrl": avatar.asset->url, // Extrai a URL da imagem do campo "avatar"
+      cellphone,
+      state,
+      email,
+      city,
+      bio,
+      title,
+      slug,
+      _id 
+    }`
+
+    const result = await client.fetch(query, { slug })
+    return result
+  } catch (error) {
+    console.error('Erro Ao buscar Representante pelo SLug')
+    throw error
+  }
+}
+
 export async function getRepresentantesByState(estado: string) {
   const client = createClient(clientConfig)
 
