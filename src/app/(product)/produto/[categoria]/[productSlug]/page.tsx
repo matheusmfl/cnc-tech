@@ -183,14 +183,14 @@ export default async function ProductPage({ params }: Props) {
                                 className="grid grid-cols-2 "
                               >
                                 <div
-                                  className={`p-[10px] h-[48px] border-l-2 border-gray-400 ${rowClasses}`}
+                                  className={`p-[10px] h-full border-l-2 border-gray-400 ${rowClasses}`}
                                 >
                                   <span className="font-roboto text-lg font-normal leading-[28px] text-slate-800">
                                     {specification.key}
                                   </span>
                                 </div>
                                 <div
-                                  className={`p-[10px] h-[48px] border-l-2 border-gray-400 ${rowClasses}`}
+                                  className={`p-[10px] h-full border-l-2 border-gray-400 ${rowClasses}`}
                                 >
                                   <span className="font-roboto text-lg font-normal leading-[28px] text-slate-800">
                                     {specification.value}
