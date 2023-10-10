@@ -45,11 +45,20 @@ export default async function ProductPage({ params }: Props) {
               </span>
             </div>
             {/* Div com imagem do produto */}
-            <div className="w-full md:h-[440px] overflow-hidden">
+            <div className="w-full md:h-[440px] md:relative overflow-hidden hidden md:block">
               <Image
                 src={product.imageUrl}
-                width={800}
-                height={800}
+                fill
+                alt="Imagem do produto"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="w-full md:h-[440px] overflow-hidden  md:hidden">
+              <Image
+                src={product.imageUrl}
+                width={400}
+                height={400}
                 alt="Imagem do produto"
                 className="object-cover"
               />
