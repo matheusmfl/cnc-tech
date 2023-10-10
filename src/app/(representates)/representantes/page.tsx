@@ -1,6 +1,5 @@
 import { Footer } from '@/components/home/footer/Footer'
 import { AsideDesktop } from '@/components/home/header/AsideDesktop'
-import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 
 import { OptionsComponent } from '@/components/representantes/OptionsComponent'
@@ -13,7 +12,6 @@ export default async function Representantes() {
         <AsideDesktop />
       </div>
       <div className="z-0 md:ml-[320px]">
-        <DesktopLogo />
         {/* Div azul com H1 */}
         <div className="py-10 px-6 lg:px-20 flex flex-col gap-6 bg-[#1F2A68]">
           <h1 className="font-roboto text-3xl font-medium leading-[36px] text-[#F8FAFC] ">

@@ -1,6 +1,5 @@
 import { Footer } from '@/components/home/footer/Footer'
 import { AsideDesktop } from '@/components/home/header/AsideDesktop'
-import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 import Image from 'next/image'
 import {
@@ -32,7 +31,6 @@ export default async function ProductPage({ params }: Props) {
         {/* Container principal */}
         <section className="z-0 md:ml-[320px]">
           {/* Desktop logo com separator */}
-          <DesktopLogo />
 
           {/* Container Geral */}
           <div className="flex flex-col bg-slate-100">

@@ -1,6 +1,5 @@
 import { Footer } from '@/components/home/footer/Footer'
 import { AsideDesktop } from '@/components/home/header/AsideDesktop'
-import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 import { ProductCard } from '@/components/product/ProductCard'
 import {
@@ -36,7 +35,6 @@ export default async function Product({ params }: Props) {
         {/* Container principal */}
         <section className="z-0 md:ml-[320px]">
           {/* Desktop logo com separator */}
-          <DesktopLogo />
 
           {/* Container Geral */}
           <div className="px-6 py-8 md:px-20 md:py-10 flex flex-col gap-5">

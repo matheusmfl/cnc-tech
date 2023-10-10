@@ -1,6 +1,5 @@
 import { Footer } from '@/components/home/footer/Footer'
 import { AsideDesktop } from '@/components/home/header/AsideDesktop'
-import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 
 import { HeroSection } from '@/components/home/heroSection/HeroSection'
@@ -24,8 +23,6 @@ export default function Home() {
         <AsideDesktop />
       </div>
       <div className="z-0 md:ml-[320px]">
-        <DesktopLogo />
-
         <HeroSection />
         <div className="md:grid md:grid-cols-3 md:px-20 md:py-10 md:bg-[#1F2A68]">
           <Section1 />

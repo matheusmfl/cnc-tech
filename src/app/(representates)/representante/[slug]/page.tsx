@@ -1,6 +1,5 @@
 import { Footer } from '@/components/home/footer/Footer'
 import { AsideDesktop } from '@/components/home/header/AsideDesktop'
-import { DesktopLogo } from '@/components/home/header/DesktopLogo'
 import { Header } from '@/components/home/header/Header'
 import arrow from '@/assets/arrowBack.svg'
 import Image from 'next/image'
@@ -16,7 +15,7 @@ export default async function pageBySlug({ params }: Props) {
   const email = representante.email
   const telephone = representante.telephone
   const cellphone = representante.cellphone
-  const city = representante.city
+  // const city = representante.city
   const name = representante.title
   const bio = representante.bio
   const avatar = representante.avatarUrl
@@ -28,7 +27,6 @@ export default async function pageBySlug({ params }: Props) {
         <AsideDesktop />
       </div>
       <div className="z-0 md:ml-[320px]">
-        <DesktopLogo />
         {/* Div azul com H1 */}
         <div className="py-10 px-6 lg:px-20 flex flex-col gap-6 text-white bg-[#1F2A68]">
           <div className="flex gap-1 items-center cursor-pointer">
