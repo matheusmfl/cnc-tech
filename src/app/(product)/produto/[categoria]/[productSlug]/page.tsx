@@ -160,7 +160,7 @@ export default async function ProductPage({ params }: Props) {
 
                   {/* Div specifications */}
 
-                  {productSpecifications.length > 0 && (
+                  {productSpecifications && (
                     <div className="flex flex-col gap-[10px]">
                       <span className="font-roboto text-xl font-medium leading-[28px] text-slate-900">
                         Informações técnicas:
