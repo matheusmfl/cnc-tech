@@ -44,11 +44,15 @@ export default async function RepresentantesState({ params }: Props) {
           <div className="flex flex-col lg:grid lg:grid-cols-3 gap-3">
             {representantes.map((representante: any) => {
               return (
-                <RepresentanteCard
+                <Link
+                  href={`/representante/${representante.slug.current}`}
                   key={representante._id}
-                  name={representante.title}
-                  imageUrl={representante.avatarUrl}
-                />
+                >
+                  <RepresentanteCard
+                    name={representante.title}
+                    imageUrl={representante.avatarUrl}
+                  />
+                </Link>
               )
             })}
           </div>

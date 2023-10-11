@@ -26,7 +26,7 @@ export const RepresentantesBrasil = defineType({
     }),
     defineField({
       name: 'state',
-      title: 'Estado',
+      title: 'Estado *Campo obrigatório',
       type: 'array',
       of: [{ type: 'string' }],
       options: {
