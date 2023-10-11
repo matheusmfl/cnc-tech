@@ -46,7 +46,7 @@ export async function getRepresentantesByState(estado: string) {
   const client = createClient(clientConfig)
 
   try {
-    const query = `*[_type == 'representantesBrasil'  && state == $estado]{
+    const query = `*[_type == 'representantesBrasil'  && $estado in state]{
       telephone,
       "avatarUrl": avatar.asset->url, // Extrai a URL da imagem do campo "avatar"
       _createdAt,

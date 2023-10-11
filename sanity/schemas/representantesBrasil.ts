@@ -27,9 +27,11 @@ export const RepresentantesBrasil = defineType({
     defineField({
       name: 'state',
       title: 'Estado',
-      type: 'string',
+      type: 'array',
+      of: [{ type: 'string' }],
       options: {
         list: [
+          { title: 'Território Nacional', value: 'AC' },
           { title: 'Acre', value: 'AC' },
           { title: 'Alagoas', value: 'AL' },
           { title: 'Amapá', value: 'AP' },
@@ -82,7 +84,8 @@ export const RepresentantesBrasil = defineType({
     }),
     defineField({
       name: 'cellphone',
-      title: 'Celular',
+      title:
+        'Celular (Sem Parenteses, sem Traços, sem espaços, com 0 + DDD  e número somente ex: 011940004000)',
       type: 'string',
     }),
   ],

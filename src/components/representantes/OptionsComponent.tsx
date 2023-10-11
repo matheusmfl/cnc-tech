@@ -15,8 +15,16 @@ export function OptionsComponent() {
 
   useEffect(() => {
     getStateRepresentantes().then((resultStates) => {
-      setStates(resultStates as string[])
-      setSlug(resultStates[0] as string)
+      const flattenAndRemoveDuplicates = (arr: any[]) => {
+        const flatArray = arr.flat(Infinity) // Aplana o array
+        const uniqueValues = Array.from(new Set(flatArray)) // Remove valores duplicados
+        return uniqueValues
+      }
+
+      const uniqueStates = flattenAndRemoveDuplicates(resultStates)
+      setStates(uniqueStates as string[])
+      console.log(uniqueStates)
+      setSlug(uniqueStates[0] as string)
     })
   }, [])
   return (
@@ -32,11 +40,21 @@ export function OptionsComponent() {
       >
         {states &&
           states.map((state, index) => {
-            return (
-              <option key={index} value={state as string}>
-                {state as string}
-              </option>
-            )
+            if (Array.isArray(state)) {
+              return state.map((subState, index) => {
+                return (
+                  <option key={index} value={subState as string}>
+                    {subState as string}
+                  </option>
+                )
+              })
+            } else {
+              return (
+                <option key={index} value={state as string}>
+                  {state as string}
+                </option>
+              )
+            }
           })}
       </select>
 
