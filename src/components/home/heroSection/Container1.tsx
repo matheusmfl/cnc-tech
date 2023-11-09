@@ -9,7 +9,7 @@ export function Container1() {
         loop // Opcional: configurar o loop do vídeo
         muted // Opcional: desativar o som do vídeo (se necessário)
       >
-        <source src="/heroVideo.mp4" type="video/mp4" />
+        <source src="/video-cnc.mp4" type="video/mp4" />
         Seu navegador não suporta o elemento de vídeo.
       </video>
     </div>
