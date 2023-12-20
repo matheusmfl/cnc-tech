@@ -1,6 +1,7 @@
 import { Search, Home } from 'lucide-react'
 import { MenuItem } from './MenuItem'
 import { ProductSubMenu } from './CollapsibleSubMenus/Product'
+import Link from 'next/link'
 
 export function AsideDesktop() {
   return (
@@ -8,12 +9,14 @@ export function AsideDesktop() {
       {/* Search div */}{' '}
       <div className="grid grid-cols-2">
         {/* HomeNav Div */}
-        <div className="border-b bg-slate-100 cursor-pointer border-r border-[#1F2A68] px-[25px] py-[30px] w-full flex items-center justify-center gap-[10px] h-[80px]">
-          <Home size={20} className="text-[#1F2A68]" />
-          <span className="uppercase text-base font-roboto font-medium leading-[20px] text-[#1F2A68]">
-            Home
-          </span>
-        </div>
+        <Link href={'/'}>
+          <div className="border-b bg-slate-100 cursor-pointer border-r border-[#1F2A68] px-[25px] py-[30px] w-full flex items-center justify-center gap-[10px] h-[80px]">
+            <Home size={20} className="text-[#1F2A68]" />
+            <span className="uppercase text-base font-roboto font-medium leading-[20px] text-[#1F2A68]">
+              Home
+            </span>
+          </div>
+        </Link>
 
         {/* Search div */}
         <div className="border-b bg-slate-100 cursor-pointer border-[#1F2A68] py-[30px] w-full flex items-center justify-center gap-[10px] h-[80px]">

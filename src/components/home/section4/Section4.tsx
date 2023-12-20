@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { CarrosselProductComponent } from './CarrosselProductComponent'
 
 export function Section4() {
@@ -14,9 +15,11 @@ export function Section4() {
       {/* Button */}
 
       <a href="#" className="w-full">
-        <button className="py-3 md:w-[130px] text-center rounded-[4px] bg-[#1F2A68] w-full font-roboto text-slate-50 font-sm font-medium">
-          Ver mais &gt;{' '}
-        </button>
+        <Link href={'/produto/pronta-entrega'}>
+          <button className="py-3 md:w-[130px] text-center rounded-[4px] bg-[#1F2A68] w-full font-roboto text-slate-50 font-sm font-medium">
+            Ver mais &gt;{' '}
+          </button>
+        </Link>
       </a>
     </section>
   )

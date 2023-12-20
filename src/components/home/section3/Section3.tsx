@@ -1,4 +1,6 @@
-import { NextButton } from '../Button'
+import Link from 'next/link'
+
+import { ChevronsRight } from 'lucide-react'
 
 export function Section3() {
   return (
@@ -15,7 +17,11 @@ export function Section3() {
 
       {/* ButtonDIV */}
       <div className="flex w-full text-slate-900 border-slate-900 justify-end overflow-hidden">
-        <NextButton />
+        <Link href={'/produto/fixed/fabrica-inteligente-4-0'}>
+          <button className="flex border-slate-900 items-center text-inherit justify-center w-[70px] py-3 px-6 border rounded-full border-inherit">
+            <ChevronsRight />
+          </button>
+        </Link>
       </div>
     </section>
   )

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { NextButton } from '../Button'
 
 export function Section1() {
@@ -15,7 +16,9 @@ export function Section1() {
 
       {/* ButtonDIV */}
       <div className="flex w-full text-white justify-end overflow-hidden">
-        <NextButton />
+        <Link href={'produto/pronta-entrega'}>
+          <NextButton />
+        </Link>
       </div>
     </section>
   )
