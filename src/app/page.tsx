@@ -13,7 +13,7 @@ import { Section4 } from '@/components/home/section4/Section4'
 import { NewSection5 } from '@/components/home/section5/NewSection5'
 
 import { Section9 } from '@/components/home/section9/Section9'
-import { SectionFeedbacks } from '@/components/home/sectionFeedbacks/sectionFeedbacks'
+// import { SectionFeedbacks } from '@/components/home/sectionFeedbacks/sectionFeedbacks'
 
 export default function Home() {
   return (
@@ -32,7 +32,7 @@ export default function Home() {
         <Section4 />
         <Section4Middle />
         <NewSection5 />
-        <SectionFeedbacks />
+        {/* <SectionFeedbacks /> */}
         {/* @ts-expect-error */}
         <Section9 />
         <Section10 />

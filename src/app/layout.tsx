@@ -1,10 +1,11 @@
 import { ReactNode } from 'react'
 import './globals.css'
-import { Roboto } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 
-const roboto = Roboto({
+const roboto = Montserrat({
   subsets: ['latin'],
   weight: ['100', '300', '400', '500', '700'],
+  variable: '--font-roboto',
 })
 
 export const metadata = {
@@ -16,7 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <main className="">{children}</main>
+        <main className="font-sans">{children}</main>
       </body>
     </html>
   )

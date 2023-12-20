@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: 'var(--font-roboto)',
-        roboto: ['Roboto', 'sans-serif'],
+        roboto: 'var(--font-roboto)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
