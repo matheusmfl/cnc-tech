@@ -9,8 +9,9 @@ import { ProductComponent } from './ProductComponent'
 
 interface Produto {
   title: string
-  subtitle: string
+  body: any
   imageUrl: string
+  slug: any
 }
 
 export function CarrosselProductComponent({ produto }: { produto: Produto[] }) {
@@ -38,8 +39,9 @@ export function CarrosselProductComponent({ produto }: { produto: Produto[] }) {
           <SwiperSlide key={product.title}>
             <ProductComponent
               imageUrl={product.imageUrl}
-              subtitle={product.title}
+              body={product.body}
               title={product.title}
+              slug={product.slug}
             />
           </SwiperSlide>
         )

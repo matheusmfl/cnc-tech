@@ -146,7 +146,8 @@ export async function getProductsByCategorySlug(categorySlug: string) {
     const productsQuery = `*[_type == 'produto' && references($category)] {
       title,
       "imageUrl": image.asset->url,
-      slug
+      slug,
+      body
     }`
 
     // Execute a consulta para obter os produtos relacionados à categoria
