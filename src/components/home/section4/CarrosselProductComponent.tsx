@@ -7,7 +7,13 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { ProductComponent } from './ProductComponent'
 
-export function CarrosselProductComponent() {
+interface Produto {
+  title: string
+  subtitle: string
+  imageUrl: string
+}
+
+export function CarrosselProductComponent({ produto }: { produto: Produto[] }) {
   SwiperCore.use([Autoplay, Pagination])
   return (
     <Swiper
@@ -27,18 +33,17 @@ export function CarrosselProductComponent() {
       }}
       loop
     >
-      <SwiperSlide>
-        <ProductComponent />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ProductComponent />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ProductComponent />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ProductComponent />
-      </SwiperSlide>
+      {produto.map((product) => {
+        return (
+          <SwiperSlide key={product.title}>
+            <ProductComponent
+              imageUrl={product.imageUrl}
+              subtitle={product.title}
+              title={product.title}
+            />
+          </SwiperSlide>
+        )
+      })}
     </Swiper>
   )
 }

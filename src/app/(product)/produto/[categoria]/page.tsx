@@ -22,6 +22,7 @@ interface IProdutos {
 export default async function Product({ params }: Props) {
   const category = params.categoria
   const produtos = await getProductsByCategorySlug(category)
+  console.log(produtos)
   const categoryTitle = await getCategoriesBySlug(category)
 
   return (

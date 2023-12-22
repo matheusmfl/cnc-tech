@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import { CarrosselProductComponent } from './CarrosselProductComponent'
+import { getProductsByCategorySlug } from '../../../../sanity/sanity-utils'
 
-export function Section4() {
+export async function Section4() {
+  const produtos = await getProductsByCategorySlug('pronta-entrega')
   return (
     <section className="py-10 px-5 flex flex-col bg-slate-200 gap-5 md:px-20 md:py-10">
       <h2 className="font-roboto text-2xl font-medium text-slate-800 leading-[32px]">
@@ -9,7 +11,7 @@ export function Section4() {
       </h2>
 
       <div>
-        <CarrosselProductComponent />
+        <CarrosselProductComponent produto={produtos} />
       </div>
 
       {/* Button */}
