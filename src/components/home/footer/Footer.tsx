@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logoFooter from '../../../assets/logoFooter.svg'
+import logoFooter from '../../../assets/logo.png'
 import {
   FacebookIcon,
   TwitterIcon,
@@ -12,7 +12,7 @@ export function Footer() {
     <footer className="flex flex-col py-10 px-5 gap-10 bg-slate-800 md:px-20">
       {/* Logo do Footer */}
       <div className="flex items-center justify-center py-3">
-        <Image src={logoFooter} alt="Logo" />
+        <Image src={logoFooter} alt="Logo" className="h-32 w-32" />
       </div>
 
       {/* Lista de navegação do footer */}

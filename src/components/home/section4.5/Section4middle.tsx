@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logo from '../../../assets/logo2CncTech.png'
+import logo from '../../../assets/logo.png'
 import image from '../../../assets/servicosCncTech.jpeg'
 
 export function Section4Middle() {
