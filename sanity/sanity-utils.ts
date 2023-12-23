@@ -129,6 +129,29 @@ export async function getCategoriesBySlug(categorySlug: string) {
   }
 }
 
+export async function getAllVideos() {
+  const client = createClient(clientConfig)
+
+  try {
+    const query = `*[_type == 'videos']{
+      description,
+      "imageUrl": image.asset->url,
+      videoUrl
+     
+    }`
+
+    const videos = await client.fetch(query)
+
+    if (!videos) {
+      throw new Error('Nenhum vídeo encontrado')
+    }
+
+    return videos
+  } catch (error) {
+    console.error('Erro ao buscar vídeos:', error)
+  }
+}
+
 export async function getProductsByCategorySlug(categorySlug: string) {
   const client = createClient(clientConfig)
   try {

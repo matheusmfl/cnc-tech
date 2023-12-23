@@ -1,6 +1,9 @@
+import { getAllVideos } from '../../../../sanity/sanity-utils'
 import { VideoCard } from '../VideoCard'
 
-export function Section10() {
+export async function Section10() {
+  const videos = await getAllVideos()
+  console.log(videos)
   return (
     <section className="flex flex-col gap-5 px-5 py-10 bg-[#1F2A68] md:px-20 md:py-20 md:gap-10">
       {/* Nome da Sessão */}
@@ -11,25 +14,17 @@ export function Section10() {
 
       {/* container com os CardsVideos */}
       <div className="flex flex-col gap-5 md:grid md:grid-cols-3">
-        <VideoCard>
-          Previsão de quantidade e tempo necessário atender sua demanda,
-          softwares de gestão inteligente.{' '}
-        </VideoCard>
-
-        <VideoCard>
-          Previsão de quantidade e tempo necessário atender sua demanda,
-          softwares de gestão inteligente.{' '}
-        </VideoCard>
-
-        <VideoCard>
-          Previsão de quantidade e tempo necessário atender sua demanda,
-          softwares de gestão inteligente.{' '}
-        </VideoCard>
-
-        <VideoCard>
-          Previsão de quantidade e tempo necessário atender sua demanda,
-          softwares de gestão inteligente.{' '}
-        </VideoCard>
+        {videos &&
+          videos.map((video: any) => {
+            return (
+              <VideoCard
+                key={video.title}
+                videoUrl={video.videoUrl}
+                description={video.description}
+                imageUrl={video.imageUrl}
+              />
+            )
+          })}
       </div>
 
       {/* sessão com texto final + botão */}

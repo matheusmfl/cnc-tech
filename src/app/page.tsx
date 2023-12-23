@@ -29,12 +29,15 @@ export default function Home() {
           <Section2 />
           <Section3 />
         </div>
+        {/* Teste de comentário */}
+        {/* @ts-expect-error Async Server Component */}
         <Section4 />
         <Section4Middle />
         <NewSection5 />
         {/* <SectionFeedbacks /> */}
         {/* @ts-expect-error */}
         <Section9 />
+        {/* @ts-expect-error Async Server Component */}
         <Section10 />
         <Section11 />
         <Footer />

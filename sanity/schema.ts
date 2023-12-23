@@ -8,6 +8,7 @@ import product from './schemas/product'
 import { Specification } from './schemas/specification'
 import productCategory from './schemas/productCategory'
 import { RepresentantesBrasil } from './schemas/representantesBrasil'
+import { videosHome } from './schemas/video/videosHome'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -19,5 +20,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     Specification,
     productCategory,
     RepresentantesBrasil,
+    videosHome,
   ],
 }
