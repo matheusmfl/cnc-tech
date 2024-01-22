@@ -6,10 +6,13 @@ import { Input } from '../ui/input'
 import { useForm } from 'react-hook-form'
 
 const productSchema = z.object({
-  name: z.string().min(3).max(50),
-  email: z.string().min(3),
-  companyName: z.string().min(3).max(50).optional(),
-  cnpj: z.string().min(3).optional(),
+  name: z
+    .string()
+    .min(3, { message: 'Nome deve haver pelo menos 3 caracteres' })
+    .max(50),
+  email: z.string().min(3).email({ message: 'Email inválido' }),
+  companyName: z.string().min(1).max(50).optional(),
+  cnpj: z.string().min(3, { message: 'Digite o CNPJ Completo' }).optional(),
 })
 
 type ProductFormSchema = z.infer<typeof productSchema>
@@ -90,12 +93,17 @@ export function ProductForm() {
         </div>
       </div>
 
-      <span className="text-xs">
-        <span className="text-red-500">*</span> campos obrigatórios
-      </span>
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 mt-4">
-        Enviar
-      </button>
+      <div className="flex flex-col gap-2">
+        <span className="text-xs">
+          <span className="text-red-500">*</span> campos obrigatórios
+        </span>
+        <button
+          type="submit"
+          className="rounded-[4px] px-4 py-2 text-center bg-[#1F2A68] font-roboto text-lg font-medium text-white"
+        >
+          Enviar
+        </button>
+      </div>
     </form>
   )
 }

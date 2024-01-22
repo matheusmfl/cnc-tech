@@ -30,6 +30,10 @@ export function AsideDesktop() {
         <ProductSubMenu />
         <MenuItem title="Serviços" icon="settings" />
         <MenuItem title="Contato" icon="contact" />
+        <a href="/blog">
+          <MenuItem title="Blog Cnc-Tech" icon="blog" />
+        </a>
+
         <MenuItem title="Sobre" icon="info" />
       </div>
     </aside>

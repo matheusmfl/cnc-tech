@@ -1,11 +1,19 @@
 // Items do menu
 'use client'
-import { Package, Settings, UserSquare2, Info, X, Plus } from 'lucide-react'
+import {
+  Package,
+  Settings,
+  UserSquare2,
+  Info,
+  X,
+  Plus,
+  AppWindow,
+} from 'lucide-react'
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { useState } from 'react'
 
 interface MenuItems {
-  icon: 'package' | 'settings' | 'contact' | 'info'
+  icon: 'package' | 'settings' | 'contact' | 'info' | 'blog'
   title: string
 }
 
@@ -19,6 +27,7 @@ export function MenuItem({ icon, title }: MenuItems) {
           {icon === 'contact' && <UserSquare2 />}
           {icon === 'info' && <Info />}
           {icon === 'settings' && <Settings />}
+          {icon === 'blog' && <AppWindow />}
           <span>{title}</span>
         </div>
         <Collapsible.Trigger asChild>

@@ -31,14 +31,7 @@ export function ProductDialog() {
         {/* Form de envio */}
         <ProductForm />
 
-        <DialogFooter>
-          <button
-            type="submit"
-            className="rounded-[4px] px-4 py-2 text-center bg-[#1F2A68] font-roboto text-lg font-medium text-white"
-          >
-            Enviar
-          </button>
-        </DialogFooter>
+        <DialogFooter></DialogFooter>
       </DialogContent>
     </Dialog>
   )
