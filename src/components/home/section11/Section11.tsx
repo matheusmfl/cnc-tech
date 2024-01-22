@@ -13,7 +13,7 @@ export function Section11() {
         Sul e Estados Unidos.
       </span>
 
-      <a href="#" className="w-full">
+      <a href="/representantes" className="w-full">
         <button className="py-3 rounded-lg md:w-[180px] text-center font-roboto font-medium text-sm text-slate-50 bg-[#1F2A68] w-full">
           Falar com representante &gt;
         </button>

@@ -30,8 +30,6 @@ export function SectionFeed() {
     setTotalPages(Math.ceil(posts!.length / postsPerPage))
   }, [posts])
 
-  console.log(totalPages)
-
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1)
   }

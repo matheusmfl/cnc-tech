@@ -23,7 +23,7 @@ export function OptionsComponent() {
 
       const uniqueStates = flattenAndRemoveDuplicates(resultStates)
       setStates(uniqueStates as string[])
-      console.log(uniqueStates)
+
       setSlug(uniqueStates[0] as string)
     })
   }, [])

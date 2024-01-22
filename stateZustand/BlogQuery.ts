@@ -33,7 +33,6 @@ export const useQueryStore = create<BlogQuery>((set, get) => ({
 
       return posts
     } else if (selectedPages && selectedPages > 1) {
-      console.log('entrou')
       const posts =
         selectedTags.length === 0
           ? await getPostsFeed(selectedPages)

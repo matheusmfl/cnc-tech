@@ -1,11 +1,6 @@
 import Image from 'next/image'
 import logoFooter from '../../../assets/logo.png'
-import {
-  FacebookIcon,
-  TwitterIcon,
-  YoutubeIcon,
-  InstagramIcon,
-} from 'lucide-react'
+import { FacebookIcon, YoutubeIcon, InstagramIcon } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -63,19 +58,15 @@ export function Footer() {
 
       {/* Links sociais do footer */}
       <div className="flex justify-between text-slate-50">
-        <a href="/">
+        <a href="https://www.facebook.com/CNCtechBrazil">
           <FacebookIcon />
         </a>
 
-        <a href="/">
-          <TwitterIcon />
-        </a>
-
-        <a href="/">
+        <a href="https://www.instagram.com/cnctechmaquinas/">
           <InstagramIcon />
         </a>
 
-        <a href="/">
+        <a href="https://www.youtube.com/@cnctechmaquinas7353">
           <YoutubeIcon />
         </a>
       </div>

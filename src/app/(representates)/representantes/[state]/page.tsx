@@ -15,7 +15,6 @@ export default async function RepresentantesState({ params }: Props) {
   const StateParams = params.state.toUpperCase()
   const representantes = await getRepresentantesByState(StateParams)
   const stateName = siglaParaNomeEstado(StateParams)
-  console.log(representantes)
 
   return (
     <main>

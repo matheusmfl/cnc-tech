@@ -19,7 +19,7 @@ export default async function pageBySlug({ params }: Props) {
   const name = representante.title
   const bio = representante.bio
   const avatar = representante.avatarUrl
-  console.log(representante)
+
   return (
     <main>
       <div className="md:fixed md:left-0 z-10">

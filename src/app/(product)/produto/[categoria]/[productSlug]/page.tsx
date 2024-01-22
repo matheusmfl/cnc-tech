@@ -10,6 +10,7 @@ import {
 import { PortableText } from '@portabletext/react'
 import Link from 'next/link'
 import { TableDemo } from '@/components/product/TableExample'
+import { ProductDialog } from '@/components/product/ProductDialog'
 
 type Props = {
   params: { categoria: string; productSlug: string }
@@ -20,7 +21,6 @@ export default async function ProductPage({ params }: Props) {
   const categoryTitle = await getCategoriesBySlug(category)
   const product = await getProductBySlug(slug)
   const productSpecifications = product.specifications
-  console.log(productSpecifications)
 
   return (
     <>
@@ -167,9 +167,7 @@ export default async function ProductPage({ params }: Props) {
                   {/* Div CTA */}
 
                   <div className="pt-10 pb-20">
-                    <button className="rounded-[4px] px-6 py-4 text-center bg-[#1F2A68] font-roboto text-lg font-medium text-white">
-                      Falar com representante
-                    </button>
+                    <ProductDialog />
                   </div>
                 </div>
               </div>
