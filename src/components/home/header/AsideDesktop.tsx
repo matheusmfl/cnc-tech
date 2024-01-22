@@ -28,13 +28,13 @@ export function AsideDesktop() {
       </div>
       <div className="flex flex-col bg-slate-100 h-screen">
         <ProductSubMenu />
-        <MenuItem title="Serviços" icon="settings" />
-        <MenuItem title="Contato" icon="contact" />
+        <MenuItem title="Serviços" icon="settings" doted />
+        <MenuItem title="Contato" icon="contact" doted />
         <a href="/blog">
-          <MenuItem title="Blog Cnc-Tech" icon="blog" />
+          <MenuItem title="Blog Cnc-Tech" icon="blog" doted={false} />
         </a>
 
-        <MenuItem title="Sobre" icon="info" />
+        <MenuItem title="Sobre" icon="info" doted />
       </div>
     </aside>
   )

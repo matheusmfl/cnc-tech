@@ -24,9 +24,9 @@ export function CollapsibleComponent() {
       </header>
       <Collapsible.Content className="CollapsibleContent">
         <ProductSubMenu />
-        <MenuItem title="Serviços" icon="settings" />
-        <MenuItem title="Contato" icon="contact" />
-        <MenuItem title="Sobre" icon="info" />
+        <MenuItem title="Serviços" icon="settings" doted />
+        <MenuItem title="Contato" icon="contact" doted />
+        <MenuItem title="Sobre" icon="info" doted />
       </Collapsible.Content>
     </Collapsible.Root>
   )

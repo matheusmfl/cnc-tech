@@ -15,9 +15,10 @@ import { useState } from 'react'
 interface MenuItems {
   icon: 'package' | 'settings' | 'contact' | 'info' | 'blog'
   title: string
+  doted: boolean
 }
 
-export function MenuItem({ icon, title }: MenuItems) {
+export function MenuItem({ icon, title, doted }: MenuItems) {
   const [open, setOpen] = useState(false)
   return (
     <Collapsible.Root open={open} onOpenChange={setOpen}>
@@ -31,7 +32,9 @@ export function MenuItem({ icon, title }: MenuItems) {
           <span>{title}</span>
         </div>
         <Collapsible.Trigger asChild>
-          <button>{open ? <X size={20} /> : <Plus size={20} />}</button>
+          {doted && (
+            <button>{open ? <X size={20} /> : <Plus size={20} />}</button>
+          )}
         </Collapsible.Trigger>
       </div>
       <Collapsible.Content className="CollapsibleContent"></Collapsible.Content>
