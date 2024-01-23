@@ -47,7 +47,9 @@ export async function Section9() {
         </span>
         {/* div com botão usado para posicionar no final do conteúdo */}
         <div className="flex justify-end md:justify-start border-slate-900 text-slate-900">
-          <ArrowButton> Ver mais </ArrowButton>
+          <a href='/blog'>
+            <ArrowButton> Ver mais </ArrowButton>
+          </a>
         </div>
       </div>
     </section>

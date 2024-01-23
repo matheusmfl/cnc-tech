@@ -214,25 +214,10 @@ export async function getProductBySlug(slug: string) {
   }
 }
 
-export async function getPostsFeed(page?: number): Promise<Posts[]> {
+export async function getPostsFeed(): Promise<Posts[]> {
   const client = createClient(clientConfig)
 
   try {
-    if (page) {
-      const pageSize = 6
-      const startIndex = (page - 1) * pageSize
-      const endIndex = startIndex + pageSize
-
-      return await client.fetch(groq`*[_type == 'post' && highlight == false]{
-        title,
-        'image': image.asset->url,
-        'categories': categories[]->,
-        slug,
-        _id,
-        _createdAt,
-        highlight
-      }[${startIndex}...${endIndex}]`)
-    }
     return await client.fetch(groq`*[_type == 'post' && highlight == false]{
       title,
       'image': image.asset->url,

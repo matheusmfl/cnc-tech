@@ -6,8 +6,6 @@ interface BlogQuery {
   selectedTags: string[]
   toggleTag: (tagId: string) => void
   getPosts: () => Promise<Posts[] | undefined>
-  currentPage: number
-  setCurrentPage: (page: number) => void
 }
 
 export const useQueryStore = create<BlogQuery>((set, get) => ({
@@ -23,26 +21,14 @@ export const useQueryStore = create<BlogQuery>((set, get) => ({
   },
   getPosts: async () => {
     const selectedTags = get().selectedTags
-    const selectedPages = get().currentPage
 
-    if (selectedPages && selectedPages < 2) {
-      const posts =
-        selectedTags.length === 0
-          ? await getPostsFeed()
-          : await getPostsByTags(selectedTags)
+    const posts =
+      selectedTags.length === 0
+        ? await getPostsFeed()
+        : await getPostsByTags(selectedTags)
 
-      return posts
-    } else if (selectedPages && selectedPages > 1) {
-      const posts =
-        selectedTags.length === 0
-          ? await getPostsFeed(selectedPages)
-          : await getPostsByTags(selectedTags)
+    console.log(selectedTags.length)
 
-      return posts
-    }
-  },
-  currentPage: 1,
-  setCurrentPage: (page) => {
-    set({ currentPage: page })
+    return posts
   },
 }))
