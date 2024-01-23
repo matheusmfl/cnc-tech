@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export async function SectionDestaques() {
   const posts: Posts[] = await getPostsByHighlights()
-  console.log(posts)
+  // console.log(posts)
 
   return (
     <section className="py-10 flex flex-col gap-7 ">

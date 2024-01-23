@@ -10,7 +10,7 @@ export function OptionsComponent() {
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSlug(e.target.value) // Atualiza a variável com o valor selecionado
-    console.log(slug)
+    // console.log(slug)
   }
 
   useEffect(() => {

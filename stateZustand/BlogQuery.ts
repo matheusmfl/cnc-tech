@@ -24,10 +24,8 @@ export const useQueryStore = create<BlogQuery>((set, get) => ({
 
     const posts =
       selectedTags.length === 0
-        ? await getPostsFeed()
+        ? await getPostsFeed(1)
         : await getPostsByTags(selectedTags)
-
-    console.log(selectedTags.length)
 
     return posts
   },

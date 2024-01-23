@@ -5,6 +5,7 @@ import { BlogCard } from './BlogCard'
 import { useQueryStore } from '../../../stateZustand/BlogQuery'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { getPostsFeed } from '../../../sanity/sanity-utils'
 
 export function SectionFeed() {
   const { getPosts, selectedTags } = useQueryStore()
@@ -13,9 +14,11 @@ export function SectionFeed() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const fetchedPosts = await getPosts()
-        setPosts(fetchedPosts)
+        const page = 0
+        const fetchedPosts = await getPostsFeed(page)
         console.log(fetchedPosts)
+        setPosts(fetchedPosts)
+        // console.log(fetchedPosts)
       } catch (error) {
         throw new Error()
       }

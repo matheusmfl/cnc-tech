@@ -6,7 +6,7 @@ import { ArrowButton } from '../Button'
 import Link from 'next/link'
 
 export async function Section9() {
-  const posts: Posts[] = await getPostsFeed();
+  const posts: Posts[] = await getPostsFeed(1);
 
   // Adicione esta função para verificar se há mais de 3 posts
   const shouldAddScroll = posts.length > 3;

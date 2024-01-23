@@ -214,20 +214,27 @@ export async function getProductBySlug(slug: string) {
   }
 }
 
-export async function getPostsFeed(): Promise<Posts[]> {
+export async function getPostsFeed(page: number): Promise<Posts[]> {
   const client = createClient(clientConfig)
+  const pageN = 2
+  const pageSize = 5
+
+  const query = `*[_type == 'post' && highlight == false] | order(_createdAt asc) [($pageN - 1)*$pageSize..$pageN*$pageSize-1]{
+    title,
+    'image': image.asset->url,
+    'categories':categories[]->,
+    slug,
+    _id,
+    _createdAt,
+    highlight
+
+  }`
 
   try {
-    return await client.fetch(groq`*[_type == 'post' && highlight == false]{
-      title,
-      'image': image.asset->url,
-      'categories':categories[]->,
-      slug,
-      _id,
-      _createdAt,
-      highlight
-
-    }`)
+    console.log('chegou aqui huhuhu')
+    console.log(page)
+    const posts = await client.fetch(query, { pageN, pageSize })
+    return posts
   } catch (error) {
     console.log('Erro ao buscar os posts:' + error)
     throw error

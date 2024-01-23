@@ -27,11 +27,11 @@ export function ProductForm() {
   })
 
   function handleSubmitForm(data: ProductFormSchema) {
-    console.log('Olá')
+    // console.log('Olá')
     if (Object.keys(errors).length > 0) {
       console.error('Erros de validação:', errors)
     }
-    console.log({ data })
+    // console.log({ data })
   }
 
   return (
