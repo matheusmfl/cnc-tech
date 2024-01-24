@@ -34,7 +34,7 @@ export function SectionFeed() {
         </h2>
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 md:grid md:grid-cols-3">
         {/* Cards do blog */}
 
         {posts &&
@@ -51,8 +51,10 @@ export function SectionFeed() {
             )
           })}
         {/* Navegação entre páginas */}
-        <div>{posts && <PaginationComponent />}</div>
+        <div className="md:hidden">{posts && <PaginationComponent />}</div>
       </div>
+
+      <div className="hidden md:flex">{posts && <PaginationComponent />}</div>
     </section>
   )
 }
