@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { getPostsFeedLength } from '../../../sanity/sanity-utils'
 import {
   Pagination,
   PaginationContent,
@@ -10,39 +9,40 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from '../ui/pagination'
+import { useQueryStore } from '../../../stateZustand/BlogQuery'
 
 export function PaginationComponent() {
   const [postsLength, setPostsLength] = useState(0)
+  const { maxPages, updateMaxPages, page, incrementPage, decrementPage } =
+    useQueryStore()
   useEffect(() => {
-    async function getPostsLength() {
-      const totalPosts = await getPostsFeedLength()
-      setPostsLength(totalPosts)
-    }
+    setPostsLength(maxPages)
+    updateMaxPages()
+  }, [maxPages])
 
-    getPostsLength()
-  }, [])
+  console.log('Página atual: ' + page)
+  function handleNextPage() {
+    incrementPage()
+  }
 
-  const totalPages = Math.ceil(postsLength / 5)
-  const totalPageArray = Array.from({ length: totalPages }, (_, index) => {
-    // Faça algo com cada índice (index)
-    return index + 1
-  })
+  function handleDecrementPage() {
+    decrementPage()
+  }
 
-  console.log('aqui' + totalPages)
   return (
     <Pagination>
       <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious href="#" />
+        <PaginationItem onClick={handleDecrementPage}>
+          <PaginationPrevious />
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink href="#">1</PaginationLink>
+          <PaginationLink>1</PaginationLink>
         </PaginationItem>
         <PaginationItem>
           <PaginationEllipsis />
         </PaginationItem>
-        <PaginationItem>
-          <PaginationNext href="#" />
+        <PaginationItem onClick={handleNextPage}>
+          <PaginationNext />
         </PaginationItem>
       </PaginationContent>
     </Pagination>
