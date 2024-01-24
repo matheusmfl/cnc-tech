@@ -23,7 +23,14 @@ export default async function Page({ params }: Props) {
       <main className="bg-slate-100 flex flex-col pb-6 gap-5 md:py-10 md:ml-[320px]">
         {/* Image DIV */}
         <div className="aspect-video relative">
-          <Image fill alt="" src={page.image as any} className="object-cover" />
+          {page.image && (
+            <Image
+              fill
+              alt=""
+              src={page.image as any}
+              className="object-cover"
+            />
+          )}
         </div>
 
         <section className="flex flex-col gap-3 py-4 px-5 font-sans">

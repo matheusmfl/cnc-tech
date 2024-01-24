@@ -6,6 +6,7 @@ import { useQueryStore } from '../../../stateZustand/BlogQuery'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { getPostsFeed } from '../../../sanity/sanity-utils'
+import { PaginationComponent } from './PaginationComponent'
 
 export function SectionFeed() {
   const { getPosts, selectedTags } = useQueryStore()
@@ -14,11 +15,10 @@ export function SectionFeed() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const page = 0
+        const page = 1
         const fetchedPosts = await getPostsFeed(page)
-        console.log(fetchedPosts)
+
         setPosts(fetchedPosts)
-        // console.log(fetchedPosts)
       } catch (error) {
         throw new Error()
       }
@@ -52,6 +52,7 @@ export function SectionFeed() {
             )
           })}
         {/* Navegação entre páginas */}
+        <div>{posts && <PaginationComponent />}</div>
       </div>
     </section>
   )

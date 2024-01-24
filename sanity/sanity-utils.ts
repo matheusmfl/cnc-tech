@@ -214,12 +214,22 @@ export async function getProductBySlug(slug: string) {
   }
 }
 
+export async function getPostsFeedLength() {
+  const client = createClient(clientConfig)
+
+  const posts = await client.fetch(`*[_type == 'post' && highlight == false]`)
+
+  return posts.length
+}
+
 export async function getPostsFeed(page: number): Promise<Posts[]> {
   const client = createClient(clientConfig)
-  const pageN = 2
+
   const pageSize = 5
 
-  const query = `*[_type == 'post' && highlight == false] | order(_createdAt asc) [($pageN - 1)*$pageSize..$pageN*$pageSize-1]{
+  console.log((page - 1) * pageSize)
+
+  const query = `*[_type == 'post' && highlight == false] | order(_createdAt asc) [($page - 1)*$pageSize..$page*$pageSize-1]{
     title,
     'image': image.asset->url,
     'categories':categories[]->,
@@ -231,9 +241,7 @@ export async function getPostsFeed(page: number): Promise<Posts[]> {
   }`
 
   try {
-    console.log('chegou aqui huhuhu')
-    console.log(page)
-    const posts = await client.fetch(query, { pageN, pageSize })
+    const posts = await client.fetch(query, { page, pageSize })
     return posts
   } catch (error) {
     console.log('Erro ao buscar os posts:' + error)

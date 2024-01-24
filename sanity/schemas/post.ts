@@ -37,6 +37,7 @@ export default defineType({
     defineField({
       name: 'image',
       title: 'Banner Imagem',
+
       type: 'image',
       options: {
         hotspot: true,
