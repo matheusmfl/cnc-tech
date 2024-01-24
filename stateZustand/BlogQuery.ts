@@ -10,15 +10,16 @@ interface BlogQuery {
   selectedTags: string[]
   toggleTag: (tagId: string) => void
   getPosts: () => Promise<Posts[] | undefined>
-  page: number
+  atualPage: number
   maxPages: number
   incrementPage: () => void
   decrementPage: () => void
   updateMaxPages: () => Promise<void>
+  setAtualPage: (page: number) => void
 }
 
 export const useQueryStore = create<BlogQuery>((set, get) => ({
-  page: 1,
+  atualPage: 1,
   maxPages: 1,
   selectedTags: [],
   toggleTag: (tagId) => {
@@ -40,16 +41,23 @@ export const useQueryStore = create<BlogQuery>((set, get) => ({
 
     return posts
   },
+  setAtualPage: (page) => {
+    set({ atualPage: page })
+  },
   incrementPage: () => {
     set((state) => {
-      return { page: state.page + 1 }
+      // Verifica se a página atual é menor que o maxPages antes de incrementar
+      if (state.atualPage < state.maxPages) {
+        return { atualPage: state.atualPage + 1 }
+      }
+      return state // Retorna o estado atual sem fazer alterações
     })
   },
   decrementPage: () => {
     set((state) => {
       // Garantindo que o valor mínimo seja 1
-      const newPage = state.page > 1 ? state.page - 1 : 1
-      return { page: newPage }
+      const newPage = state.atualPage > 1 ? state.atualPage - 1 : 1
+      return { atualPage: newPage }
     })
   },
   updateMaxPages: async () => {

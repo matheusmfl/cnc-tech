@@ -9,14 +9,13 @@ import { getPostsFeed } from '../../../sanity/sanity-utils'
 import { PaginationComponent } from './PaginationComponent'
 
 export function SectionFeed() {
-  const { getPosts, selectedTags } = useQueryStore()
+  const { getPosts, selectedTags, atualPage } = useQueryStore()
   const [posts, setPosts] = useState<Posts[] | undefined>([])
 
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const page = 1
-        const fetchedPosts = await getPostsFeed(page)
+        const fetchedPosts = await getPostsFeed(atualPage)
 
         setPosts(fetchedPosts)
       } catch (error) {
@@ -25,7 +24,7 @@ export function SectionFeed() {
     }
 
     fetchPosts()
-  }, [selectedTags, getPosts])
+  }, [selectedTags, getPosts, atualPage])
 
   return (
     <section className="py-10 flex flex-col gap-7">

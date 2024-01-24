@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import {
   Pagination,
   PaginationContent,
@@ -12,15 +12,18 @@ import {
 import { useQueryStore } from '../../../stateZustand/BlogQuery'
 
 export function PaginationComponent() {
-  const [postsLength, setPostsLength] = useState(0)
-  const { maxPages, updateMaxPages, page, incrementPage, decrementPage } =
-    useQueryStore()
+  const {
+    maxPages,
+    updateMaxPages,
+    atualPage,
+    incrementPage,
+    decrementPage,
+    setAtualPage,
+  } = useQueryStore()
   useEffect(() => {
-    setPostsLength(maxPages)
     updateMaxPages()
-  }, [maxPages])
+  }, [])
 
-  console.log('Página atual: ' + page)
   function handleNextPage() {
     incrementPage()
   }
@@ -29,15 +32,30 @@ export function PaginationComponent() {
     decrementPage()
   }
 
+  const renderPageNumbers = () => {
+    const pageNumbers = Array.from(
+      { length: maxPages },
+      (_, index) => index + 1,
+    )
+
+    return pageNumbers.map((pageNumber: number) => (
+      <PaginationItem key={pageNumber} onClick={() => setAtualPage(pageNumber)}>
+        <PaginationLink
+          className={`${pageNumber === atualPage && 'underline'}`}
+        >
+          {pageNumber}
+        </PaginationLink>
+      </PaginationItem>
+    ))
+  }
+
   return (
     <Pagination>
       <PaginationContent>
         <PaginationItem onClick={handleDecrementPage}>
           <PaginationPrevious />
         </PaginationItem>
-        <PaginationItem>
-          <PaginationLink>1</PaginationLink>
-        </PaginationItem>
+        {renderPageNumbers()}
         <PaginationItem>
           <PaginationEllipsis />
         </PaginationItem>
