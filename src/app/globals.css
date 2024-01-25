@@ -79,6 +79,19 @@ body {
   -text-rendering: optimizeLegibility;  
 }
 
+@keyframes lineGrow {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100% /* Leva em consideração as margens esquerda e direita (6px cada) */
+  }
+}
+
+.animate-line-grow {
+  animation: lineGrow 1s ease-in-out;
+}
+
 body::-webkit-scrollbar {
   width: 8px; /* Largura da barra de rolagem */
 }
