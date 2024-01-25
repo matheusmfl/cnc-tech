@@ -14,6 +14,8 @@ import { useEffect, useState } from 'react'
 import { Posts } from '@/@types/post'
 import { SkeletonSection9 } from './Skeleton'
 
+import Autoplay from 'embla-carousel-autoplay'
+
 export function CarouselComponent() {
   const { getPosts, loading } = useQueryStore()
 
@@ -34,12 +36,12 @@ export function CarouselComponent() {
   }, [getPosts])
 
   return (
-    <Carousel>
+    <Carousel plugins={[Autoplay({ delay: 5000 })]} className="h-[450px]">
       <CarouselContent>
         {posts &&
           posts.map((post, index) => {
             return (
-              <CarouselItem key={post._id} className="basis-1/3">
+              <CarouselItem key={post._id} className=" md:basis-1/3">
                 <Link href={`blogpage/${post.slug.current}`}>
                   {loading ? (
                     <SkeletonSection9 />

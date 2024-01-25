@@ -16,7 +16,7 @@ export function BlogCardWithDate({
   return (
     <div className="shadow-lg flex flex-col rounded-md overflow-hidden md:w-[240px]">
       {/* container com texto, data e categoria */}
-      <div className="p-5 bg-slate-100 gap-[72px] flex flex-col md:h-[224px]">
+      <div className="p-5 bg-slate-100 gap-[72px] flex flex-col h-[224px] md:h-[224px]">
         <h3 className="font-medium text-sky-900 leading-6 md:line-clamp-2">
           {title}
         </h3>
@@ -28,13 +28,13 @@ export function BlogCardWithDate({
       </div>
 
       {/* container com imagem */}
-      <div className="">
+      <div className="h-[226px]">
         <Image
           src={image}
           alt="Imagem genérica do blog!"
           width={600}
           height={600}
-          className="h-full md:h-[240px] md:object-cover"
+          className="h-full md:h-[240px] object-cover"
         />
       </div>
     </div>
