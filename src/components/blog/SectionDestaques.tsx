@@ -15,7 +15,7 @@ export async function SectionDestaques() {
         </h2>
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 md:grid md:grid-cols-3">
         {/* Cards do blog */}
 
         {posts.map((post, index) => {

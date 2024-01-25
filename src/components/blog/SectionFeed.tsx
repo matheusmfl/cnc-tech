@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 'use client'
 
 import { Posts } from '@/@types/post'
@@ -5,17 +6,18 @@ import { BlogCard } from './BlogCard'
 import { useQueryStore } from '../../../stateZustand/BlogQuery'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { getPostsFeed } from '../../../sanity/sanity-utils'
+
 import { PaginationComponent } from './PaginationComponent'
+import { SkeletonCards } from './SkeletonCards'
 
 export function SectionFeed() {
-  const { getPosts, selectedTags, atualPage } = useQueryStore()
+  const { getPosts, selectedTags, atualPage, loading } = useQueryStore()
   const [posts, setPosts] = useState<Posts[] | undefined>([])
 
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const fetchedPosts = await getPostsFeed(atualPage)
+        const fetchedPosts = await getPosts()
 
         setPosts(fetchedPosts)
       } catch (error) {
@@ -34,10 +36,17 @@ export function SectionFeed() {
         </h2>
       </div>
 
-      <div className="flex flex-col gap-4 md:grid md:grid-cols-3">
+      <div
+        // eslint-disable-next-line prettier/prettier
+        className={`flex flex-col gap-4 md:grid ${loading ? 'md:grid-cols-1' : 'md:grid-cols-3'
+          }`}
+      >
         {/* Cards do blog */}
 
-        {posts &&
+        {loading ? (
+          <SkeletonCards />
+        ) : (
+          posts &&
           posts.map((post, index) => {
             return (
               <Link href={`blogpage/${post.slug.current}`} key={post._id}>
@@ -49,12 +58,18 @@ export function SectionFeed() {
                 />
               </Link>
             )
-          })}
+          })
+        )}
+
         {/* Navegação entre páginas */}
-        <div className="md:hidden">{posts && <PaginationComponent />}</div>
+        <div className="md:hidden">
+          {selectedTags.length < 1 && <PaginationComponent />}
+        </div>
       </div>
 
-      <div className="hidden md:flex">{posts && <PaginationComponent />}</div>
+      <div className="hidden md:flex">
+        {selectedTags.length < 1 && <PaginationComponent />}
+      </div>
     </section>
   )
 }

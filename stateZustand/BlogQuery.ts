@@ -16,9 +16,12 @@ interface BlogQuery {
   decrementPage: () => void
   updateMaxPages: () => Promise<void>
   setAtualPage: (page: number) => void
+  loading: boolean
+  setLoading: (isLoading: boolean) => void
 }
 
 export const useQueryStore = create<BlogQuery>((set, get) => ({
+  loading: false,
   atualPage: 1,
   maxPages: 1,
   selectedTags: [],
@@ -32,14 +35,22 @@ export const useQueryStore = create<BlogQuery>((set, get) => ({
     })
   },
   getPosts: async () => {
-    const selectedTags = get().selectedTags
+    set({ loading: true })
 
-    const posts =
-      selectedTags.length === 0
-        ? await getPostsFeed(1)
-        : await getPostsByTags(selectedTags)
+    try {
+      const { atualPage, selectedTags } = get()
 
-    return posts
+      const posts =
+        selectedTags.length === 0
+          ? await getPostsFeed(atualPage)
+          : await getPostsByTags(selectedTags)
+
+      return posts
+    } finally {
+      setTimeout(() => {
+        set({ loading: false })
+      }, 1000)
+    }
   },
   setAtualPage: (page) => {
     set({ atualPage: page })
@@ -52,6 +63,9 @@ export const useQueryStore = create<BlogQuery>((set, get) => ({
       }
       return state // Retorna o estado atual sem fazer alterações
     })
+  },
+  setLoading: (isLoading) => {
+    set({ loading: isLoading })
   },
   decrementPage: () => {
     set((state) => {
