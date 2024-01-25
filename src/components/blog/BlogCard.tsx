@@ -10,14 +10,14 @@ type Props = {
 export function BlogCard({ image, title, date }: Props) {
   return (
     <div className="flex rounded-md md:flex-col border border-slate-300 shadow-md cursor-pointer h-36 md:h-96">
-      <div className="md:h-[203px]">
+      <div className="md:h-[203px] overflow-hidden h-full">
         {image && (
           <Image
             src={image}
             alt=""
             width={400}
             height={380}
-            className="rounded-tl-md md:h-full md:w-[280px] rounded-bl-md object-cover object-center w-[160px] h-[208px] "
+            className="rounded-tl-md md:h-full md:w-[280px] rounded-bl-md object-cover object-center w-[160px] h-36 "
           />
         )}
       </div>

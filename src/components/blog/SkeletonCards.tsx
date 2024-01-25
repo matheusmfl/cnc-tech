@@ -6,7 +6,7 @@ export function SkeletonCards() {
   const { loading } = useQueryStore()
 
   return (
-    <div className="md:grid md:grid-cols-3 md:gap-4 w-full relative">
+    <div className="flex flex-col gap-6 md:grid md:grid-cols-3 md:gap-4 w-full relative">
       {/* Linha horizontal fora dos cards */}
       {loading && (
         <div className="absolute -top-4 left-0 z-10 right-28 h-2 bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 animate-line-grow"></div>
@@ -16,7 +16,7 @@ export function SkeletonCards() {
         return (
           <div
             key={id}
-            className="md:h-96 shadow-md bg-slate-200 relative overflow-hidden animate-pulse"
+            className="h-36 md:h-96 shadow-md bg-slate-200 relative overflow-hidden animate-pulse"
           >
             {/* Conteúdo do card de vídeo */}
           </div>
