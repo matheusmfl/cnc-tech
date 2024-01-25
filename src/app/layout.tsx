@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import './globals.css'
 import { Montserrat } from 'next/font/google'
+import { HelpButton } from '@/components/home/helpButton/HelpButton'
 
 const roboto = Montserrat({
   subsets: ['latin'],
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
+        <HelpButton />
         <main className="font-sans">{children}</main>
       </body>
     </html>
