@@ -12,9 +12,10 @@ import Link from 'next/link'
 import { BlogCardWithDate } from '../BlogCardWithDate'
 import { useEffect, useState } from 'react'
 import { Posts } from '@/@types/post'
+import { SkeletonSection9 } from './Skeleton'
 
 export function CarouselComponent() {
-  const { getPosts } = useQueryStore()
+  const { getPosts, loading } = useQueryStore()
 
   const [posts, setPosts] = useState<Posts[] | undefined>([])
 
@@ -40,12 +41,16 @@ export function CarouselComponent() {
             return (
               <CarouselItem key={post._id} className="basis-1/3">
                 <Link href={`blogpage/${post.slug.current}`}>
-                  <BlogCardWithDate
-                    date={'25/02/2023'}
-                    image={post.image}
-                    category="Tecnologia"
-                    title={post.title}
-                  />
+                  {loading ? (
+                    <SkeletonSection9 />
+                  ) : (
+                    <BlogCardWithDate
+                      date={'25/02/2023'}
+                      image={post.image}
+                      category="Tecnologia"
+                      title={post.title}
+                    />
+                  )}
                 </Link>
               </CarouselItem>
             )
