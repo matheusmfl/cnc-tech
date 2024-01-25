@@ -6,7 +6,7 @@ import { CarouselComponent } from './Carousel'
 export async function Section9() {
 
   return (
-    <section className="flex flex-col gap-10 px-5 py-10 bg-gray-300 md:px-20 md:py-20">
+    <section className="flex flex-col overflow-x-hidden gap-10 px-5 py-10 bg-gray-300 md:px-20 md:py-20">
       {/* Nome da Sessão */}
       <h2 className="text-2xl font-roboto font-medium leading-[32px] text-slate-800">
         Novidades <strong>CNCTech</strong>
