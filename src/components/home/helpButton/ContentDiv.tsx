@@ -7,7 +7,8 @@ import { Balloon } from './Balloon';
 const chatData = [
   { title: 'Oi, eu sou o Aron, assistente virtual  da Cnc Tech.', link: null, subtitle: null },
   { title: 'Escolha uma das opções rápidas que estão no menu ou clique em “Outros assuntos” para falar com profissional da Cnc.', link: null, subtitle: null },
-  { title: null, link: { title: 'Encontrar revendedor mais perto', href: '/representantes' }, subtitle: 'Olá, isso é um teste' }
+  { title: null, link: { title: 'Encontrar revendedor mais perto', href: '/representantes' }, subtitle: 'Encontre o revendedor mais perto do seu estado' },
+  { title: null, link: { title: 'Dúvidas sobre máquinas', href: '/representantes' }, subtitle: 'Falar com um atendente especializado' }
   // Adicione mais posições conforme necessário
 ];
 
@@ -25,11 +26,9 @@ export function ContentDivChatBot() {
         newMessages[step] = chatData[step].title;
         return newMessages;
       });
-
-      // Desativar "digitando..." e atualizar para o próximo passo após o tempo de digitação
       setIsTyping(false);
       setStep((prevStep) => (prevStep < totalStep - 1 ? prevStep + 1 : prevStep));
-    }, 3000); // Ajuste o tempo conforme necessário
+    }, 1000);
 
     return () => clearTimeout(typingTimeout);
   }, [step, totalStep]);

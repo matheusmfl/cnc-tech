@@ -11,6 +11,10 @@ interface BalloonProps {
 }
 
 export function Balloon({ title, subtitle, link }: BalloonProps) {
+  const date = new Date()
+
+  const hora = date.getHours()
+  const minutes = date.getMinutes()
   return (
     <div className="flex gap-2">
       <Image src={avatarBot} alt="Nosso avatar" className="h-[48px] w-[48px]" />
@@ -19,14 +23,16 @@ export function Balloon({ title, subtitle, link }: BalloonProps) {
           {link ? (
             <a
               href={'#'}
-              className="text-blue-500 underline"
+              className="text-sky-600 font-medium text-lg"
               target="_blank"
               rel="noopener noreferrer"
             >
               {link.title}
             </a>
           ) : (
-            <span>{title}</span>
+            <span className="text-neutral-600 font-normal text-base">
+              {title}
+            </span>
           )}
         </div>
         {link ? (
@@ -36,7 +42,9 @@ export function Balloon({ title, subtitle, link }: BalloonProps) {
         ) : null}
 
         <div className="w-full justify-end flex">
-          <span className="text-xs italic">17:50</span>
+          <span className="text-xs italic">
+            {hora.toString()}:{minutes.toString()}
+          </span>
         </div>
       </div>
     </div>
