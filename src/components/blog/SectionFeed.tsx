@@ -61,7 +61,6 @@ export function SectionFeed() {
           })
         )}
 
-        {/* Navegação entre páginas */}
         <div className="md:hidden">
           {selectedTags.length < 1 && <PaginationComponent />}
         </div>
