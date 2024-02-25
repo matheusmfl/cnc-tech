@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 'use client'
 import * as Collapsible from '@radix-ui/react-collapsible'
-import logo from '../../../assets/logo.png'
+import logo from '../../../assets/refactor-logo.svg'
 import { Search, Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'

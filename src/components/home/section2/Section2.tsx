@@ -2,7 +2,7 @@ import { NextButton } from '../Button'
 
 export function Section2() {
   return (
-    <section className="flex flex-col py-5 px-5 gap-5 bg-[#3C90CE]">
+    <section className="flex flex-col py-5 px-5 gap-5 bg-[#3C90CE] lg:max-w-[380px]">
       {/* Text DIV */}
       <div>
         <h2 className="font-roboto text-lg font-medium text-slate-50">

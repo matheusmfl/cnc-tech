@@ -4,7 +4,7 @@ import { ChevronsRight } from 'lucide-react'
 
 export function Section3() {
   return (
-    <section className="flex flex-col py-5 px-5 gap-5 bg-[#F0F2F4]">
+    <section className="flex flex-col py-5 px-5 gap-5 bg-[#F0F2F4] lg:max-w-[360px]">
       {/* Text DIV */}
       <div>
         <h2 className="font-roboto text-lg font-semibold text-[#1E293B]">

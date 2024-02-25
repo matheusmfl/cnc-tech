@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import img1 from '../../../assets/supportImage.jpeg'
-import img2 from '../../../assets/representanteImage.jpeg'
-import img3 from '../../../assets/cursosImage.jpeg'
+import img2 from '../../../assets/representanteImage.jpg'
+import img3 from '../../../assets/cursosImage.jpg'
 
 export function NewSection5() {
   return (
-    <section className="bg-slate-200 py-10 px-5 flex flex-col gap-5 md:py-10 md:px-20">
+    <section className="bg-slate-200 py-10 px-5 flex flex-col gap-5 md:py-10 md:px-20 2xl:px-[12%]">
       <h2 className="text-2xl font-roboto font-medium leading-[32px] text-slate-800">
         Contato
       </h2>

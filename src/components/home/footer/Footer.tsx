@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logoFooter from '../../../assets/logo.png'
+import logoFooter from '../../../assets/refactor-logo.svg'
 import { FacebookIcon, YoutubeIcon, InstagramIcon } from 'lucide-react'
 
 export function Footer() {

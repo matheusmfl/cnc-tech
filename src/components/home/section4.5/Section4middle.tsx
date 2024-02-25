@@ -1,23 +1,23 @@
 import Image from 'next/image'
-import logo from '../../../assets/logo.png'
-import image from '../../../assets/servicosCncTech.jpeg'
+import logo from '../../../assets/refactor-logo.svg'
+import image from '../../../assets/servicosCncTech.jpg'
 
 export function Section4Middle() {
   return (
-    <section className="bg-[#F0F2F4] py-10 px-5 flex flex-col gap-5 rounded-lg overflow-hidden md:px-20">
+    <section className="bg-[#F0F2F4] py-10 px-5 flex flex-col gap-5 rounded-lg overflow-hidden md:px-20 2xl:items-center">
       {/* logo div */}
       <div className="flex items-center justify-center">
         <Image src={logo} alt="nossa logomarca" className="w-[141px] " />
       </div>
 
       {/* Card */}
-      <div className="flex flex-col md:flex-row shadow-lg rounded-b-lg ">
+      <div className="flex flex-col md:flex-row shadow-lg rounded-b-lg md:overflow-hidden md:rounded-tl-lg ">
         {/* img div */}
         <div>
           <Image
             src={image}
             alt="Imagem generica"
-            className="rounded-t-lg md:w-[640px] md:rounded-l-lg md:scale-105 md:rounded-r-none"
+            className="rounded-t-lg md:flex-1 md:rounded-l-lg md:scale-105 md:rounded-r-none"
           />
         </div>
         {/* div abaixo imagem */}

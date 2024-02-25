@@ -24,7 +24,7 @@ export default function Home() {
       </div>
       <div className="z-0 md:ml-[320px]">
         <HeroSection />
-        <div className="md:grid md:grid-cols-3 md:px-20 md:py-10 md:bg-[#1F2A68]">
+        <div className="md:grid md:grid-cols-3 md:px-20 md:py-10 2xl:py-30 2xl:flex 2xl:items-center 2xl:justify-center md:bg-[#1F2A68]">
           <Section1 />
           <Section2 />
           <Section3 />
