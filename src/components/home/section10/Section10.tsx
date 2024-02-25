@@ -5,7 +5,7 @@ export async function Section10() {
   const videos = await getAllVideos()
 
   return (
-    <section className="flex flex-col gap-5 px-5 py-10 bg-[#1F2A68] md:px-20 md:py-20 md:gap-10">
+    <section className="flex flex-col gap-5 px-5 py-10 bg-footer md:px-20 md:py-20 md:gap-10">
       {/* Nome da Sessão */}
 
       <h2 className="text-2xl font-roboto font-medium leading-[32px] text-slate-50">
